@@ -1,0 +1,244 @@
+<!-- {{section.settings.non_prescriptions}} -->
+{% assign nonPs = section.settings.non_prescriptions | split: ',' %}
+{% assign lens_handle = 'optical-lens' %}
+{% if section.settings.lens_handle %}
+  {% assign lens_handle = section.settings.lens_handle %}
+{% endif %}
+
+<script>
+  const cart = {{ cart | json }};
+  Lens = {};
+  Cart = {
+    data: cart
+  };
+
+  Lens.colors = {
+    array: ['Grey', 'Brown', 'Green'],
+    Grey: "{{ section.settings.image_gray | img_url: '150x' }}",
+    Brown: "{{ section.settings.image_brown | img_url: '150x' }}",
+    Green: "{{ section.settings.image_green | img_url: '150x' }}"
+  }
+
+  Lens.json = {{ all_products[lens_handle] | json }};
+
+  Lens.getLensDataByJson = (lensJson) => {
+    const lensData = {
+      _info: {
+        path: "",
+        prices: [],
+        variants: [],
+        ids: []
+      }
+    }
+    /**
+     * 向镜片对象中的info追加数据
+     * @param {Object} info 信息对象
+     * @param {String} path 路径
+     * @param {Object} variant 变体
+     */
+    const infoAdd = (info, variant, path) => {
+      info.variants.push(variant);
+      info.ids.push(variant.id);
+      info.prices.push(variant.price);
+      info.price_min = Math.min(...info.prices);
+      info.price_max = Math.max(...info.prices);
+      info.price_dis = info.price_max - info.price_min;
+      info.size = info.variants.length;
+      if (path) info.path = path;
+    }
+
+    // 格式化 Lens
+    lensJson.variants.forEach(variant => {
+      // 总的
+      infoAdd(lensData._info, variant);
+      // 里面的
+      const pathArr = variant.title.split('/');
+      let obj = lensData;
+      pathArr.forEach(name => {
+        let path = obj._info.path;
+        if(!obj.hasOwnProperty(name)) {
+          obj[name] = {
+            _info: {
+              path: "",
+              prices: [],
+              variants: [],
+              ids: []
+            }
+          }
+        }
+        obj = obj[name];
+        const info = obj._info;
+        if (path) {
+          path += ('/' + name)
+        } else {
+          path += name;
+        }
+        infoAdd(info, variant, path);
+      });
+    });
+    return lensData;
+  };
+  Lens.getLensDataByPath = (path, lensData) => {
+    if(path) {
+      const pathArray = path.split("/");
+      for (let i = 0; i < pathArray.length; i++) {
+        const name = pathArray[i];
+        lensData = lensData[name];
+      }
+    }
+    return lensData;
+  };
+  Lens.getMoney = (price, complete) => {
+    if (!price) return "Free";
+    let money = theme.Currency.formatMoney(
+      price,
+      theme.moneyFormat
+    );
+    return !complete ? money.substring(0,money.length-1) : money;
+  }
+  
+  Lens.non_prescriptions = [{%- for item in nonPs -%}"{{item}}"{%- endfor -%}]
+
+  Lens.text = {};
+  Lens.text.titles = {{section.settings | json}};
+  Lens.text.notes = [];
+
+  {%- for block in section.blocks %}
+    {%- if block.type == "note" -%}
+      Lens.text.notes.push({{block.settings | json}});
+    {%- endif -%}
+  {% endfor %}
+
+  Lens.icons = {};
+  Lens.icons.back = /*html*/`{% include 'icon-back', icon_size: "16px" %}`
+  Lens.icons.close = /*html*/`{% include 'icon-close', icon_size: "16px" %}`
+  Lens.icons.dagou = /*html*/`{% include 'icon-dagou'%}`;
+
+  Lens['{{lens_handle}}'] = {
+    json: {{ all_products[lens_handle] | json }}
+  };
+  Lens['{{lens_handle}}'].lensData = Lens.getLensDataByJson(Lens['{{lens_handle}}'].json);
+  
+</script>
+
+{% schema %}
+{
+  "name": "镜片选择器配置",
+  "settings": [
+    {
+      "type": "header",
+      "content": "主要配置"
+    },
+    {
+      "type": "product",
+      "id": "lens_handle",
+      "label": "镜片",
+      "info": "请选择镜片"
+    },
+    {
+      "type": "textarea",
+      "id": "non_prescriptions",
+      "label": "不需要提交处方的选项",
+      "default": "Non-prescription",
+      "info": "选项名称一,选项名称二"
+    },
+    {
+      "type": "header",
+      "content": "其他配置"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_1",
+      "label": "步骤一",
+      "default": "<p>Select a prescription type</p>",
+      "info": "选择处方类型"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_2",
+      "label": "步骤二",
+      "default": "<p>Let's getyour prescription</p>",
+      "info": "让我们得到您的处方"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_2_readers",
+      "label": "步骤二-老花眼镜",
+      "default": "<p>Select a magnification strength</p>",
+      "info": "选择老花镜片度数"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_3",
+      "label": "步骤三",
+      "default": "<p>Select a lens type</p>",
+      "info": "选择镜片类型"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_3_color",
+      "label": "步骤三-颜色",
+      "default": "<p>Select a light-responsive lens color</p>",
+      "info": "选择对光敏感的镜片颜色"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_4",
+      "label": "步骤四",
+      "default": "<p>Select a lens material</p>",
+      "info": "选择镜片材质"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_5",
+      "label": "步骤五",
+      "default": "<p>Review your selections</p>",
+      "info": "检查你的选择"
+    },
+    {
+      "type": "richtext",
+      "id": "title_step_5_description",
+      "label": "步骤五 描述",
+      "default": "<p>With every pair, you’ll get free shipping, hassle-free returns, and our one-year, no-scratch guarantee</p>",
+      "info": "检查你的选择页面的描述"
+    },
+    {
+      "type": "header",
+      "content": "颜色选项"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_gray",
+      "label": "Gray 灰色"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_brown",
+      "label": "Brown 棕色"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_green",
+      "label": "Green 绿色"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "note",
+      "name": "标题注释",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "标题"
+        },
+        {
+          "type": "textarea",
+          "id": "note",
+          "label": "注释"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

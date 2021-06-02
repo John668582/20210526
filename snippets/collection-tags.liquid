@@ -1,0 +1,60 @@
+<!-- /snippets/collection-tags.liquid -->
+
+{% comment %}
+    Renders a dropdown of ungrouped tags from a collection
+
+    Accepts:
+    - collection: {Object} currenct collection
+
+    Usage:
+    {%- render 'collection-tags' collection: collection -%}
+{% endcomment %}
+
+<div class="popout--filter">
+  <h2 class="visually-hidden" id="filter-heading">
+    {{ 'collections.general.filter_by' | t }}
+  </h2>
+  <div class="popout" data-popout-filter>
+    <button type="button"
+      class="popout__toggle"
+      aria-expanded="false"
+      aria-controls="filter-list"
+      aria-describedby="filter-heading"
+      data-popout-toggle>
+      {% if current_tags %}
+        {%- for tag in current_tags -%}
+          {%- if forloop.index0 > 0 -%}&nbsp;|&nbsp;{%- endif -%}{{ tag }}
+        {%- endfor -%}
+      {%- else -%}
+        {{ 'collections.general.filter_by' | t }}
+      {% endif %}
+      {%- render 'icon-select' -%}
+    </button>
+    <ul id="filter-list" class="popout-list" data-popout-list>
+      <li class="popout-list__item {% if active %}popout-list__item--current{% endif %}">
+        <a class="popout-list__option" href="{{ routes.collections_url }}/{{ collection.handle }}/" {% if active  %}aria-current="true"{% endif %} data-popout-option>
+          <span>{{ 'collections.general.reset' | t }}</span>
+        </a>
+      </li>
+      {% for tag in collection.all_tags %}
+        {% assign firstChar = tag | slice: 0 %}
+        {%- unless firstChar == '_' -%}
+          {% assign active = false %}
+          {% assign link = tag | link_to_add_tag: tag %}
+          {%- if current_tags contains tag -%}
+            {% assign active = true %}
+            {% assign link = tag | link_to_remove_tag: tag %}
+          {%- endif -%}
+          {%- assign link_array = link | split: 'href=' -%}
+          {%- assign link_array = link_array[1] | split: '"' -%}
+          {%- assign link = link_array[1] -%}
+          <li class="popout-list__item {% if active %}popout-list__item--current{% endif %}">
+            <a class="popout-list__option" href="{{ link }}" {% if active  %}aria-current="true"{% endif %} data-popout-option>
+              <span>{{ tag }}</span>
+            </a>
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

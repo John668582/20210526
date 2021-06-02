@@ -1,0 +1,74 @@
+<!-- /snippets/collection-block.liquid -->
+
+{% comment %}
+    Renders a list of products from a collection
+
+    Accepts:
+    - collection: {Object} Image to render (required)
+    - section: {Object} Image to render (required)
+    - block: {Object} Image section settings (required)
+    - grid_strings: {String} contains a string of grid classes (required)
+    - limit: {Number} contains a value of products to render in grid (required)
+
+    Usage:
+    {%- render 'collection-block' collection: collection, section: section, block: block, grid_strings: grid_strings, limit: limit -%}
+{% endcomment %}
+
+{%- assign collection_title = block.settings.collection_name -%}
+
+<div class="collection-block">
+  <div class="collection-block__content">
+    <h2 class="collection-block__title">
+      {%- if collection_title != blank -%}
+        {{ collection_title }}
+      {%- else -%}
+        {{ collection.title }}
+      {%- endif -%}
+    </h2>
+    {% if collection.description != ''  %}
+      <p>{{ collection.description }}</p>
+    {% endif %}
+    <a class="collection-block__button btn btn--neutral btn--secondary btn--large caps" href="{{ collection.url }}">{{ 'collections.general.view_collection' | t }}</a>
+
+  </div>
+  {%- if collection.image != blank -%}
+    {%- assign img_object = collection.image -%}
+    {%- assign img_small = collection.image | img_url: '18x' -%}
+    {%- assign img_api = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  {%- elsif section.settings.display_type == 'selected' and block.settings.collection == blank -%}
+    {%- assign img_object = 'blank.svg' | asset_url -%}
+    {%- assign img_small =  'blank.svg' | asset_url -%}
+    {%- assign img_api = 'blank.svg' | asset_url -%}
+  {%- else -%}
+    {%- assign img_object = 'blank.png' | asset_url -%}
+    {%- assign img_small =  'blank.png' | asset_url -%}
+    {%- assign img_api = 'blank.png' | asset_url -%}
+  {%- endif -%}
+  {%- if block.settings.image -%}
+    {%- assign img_object = block.settings.image -%}
+    {%- assign img_small = block.settings.image | img_url: '18x' -%}
+    {%- assign img_api = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  {%- endif -%}
+  <a href="{{ collection.url }}" class="collection-block__image">
+    <div class="collection-block__image-bg lazyload" data-bgset="{% render 'bgset', image: img_object %}"></div>
+    <noscript>
+      <div class="collection-block__image-bg no-js-image" style="background-image: url( {{ img_object | img_url: '1024x' }} )"></div>
+    </noscript>
+  </a>
+</div>
+
+<section class="index-products" data-section-id="{{ section.id }}" data-section-type="featured-products" data-reviews="{{ showReviews }}" data-swatches="{{ enableSwatches }}">
+  <div class="product-grid product-grid--{{ section.settings.scroll }} {% if section.settings.scroll == 'horizontally' %}flickity-slider--default{% endif %}" data-arrows-style="dark">
+    {% if collection.products.size > 0 %}
+      {% for product in collection.products limit: limit  %}
+        {% assign grid_int = section.settings.grid | times:1 %}
+        {% assign animation_delay = forloop.index0  | modulo:grid_int | times:1 %}
+        {% render 'product-grid-item', product: product, grid_strings: grid_strings %}
+      {% endfor %}
+    {% elsif section.settings.display_type == 'selected' and block.settings.collection == blank %}
+      {% for i in (1..limit) %}
+        {% render 'onboarding-product-grid-item' %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>

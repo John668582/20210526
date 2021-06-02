@@ -1,0 +1,1657 @@
+{
+  "current": {
+    "zq_color_bg_lens_option_name": "#eff3f5",
+    "text_color": "#545454",
+    "bg_color": "#ffffff",
+    "secondary_bg_color": "#F7F7F7",
+    "accent_bright": "#b1945c",
+    "accent_secondary": "#8191a4",
+    "site_border_color": "#F0F0F0",
+    "link_color": "#545454",
+    "link_hover_color": "#b1945c",
+    "header_bg": "#ffffff",
+    "header_link": "#545454",
+    "header_link_hover": "#b1945c",
+    "menu_bg_color": "#ffffff",
+    "menu_border_color": "#F0F0F0",
+    "menu_link_color": "#545454",
+    "menu_link_hover_color": "#b1945c",
+    "submenu_bg_color": "#ffffff",
+    "submenu_link_color": "#545454",
+    "submenu_link_hover_color": "#c5aa76",
+    "footer_bg": "#ffffff",
+    "footer_text": "#545454",
+    "footer_link": "#545454",
+    "footer_link_hover": "#b1945c",
+    "type_heading_font": "century_gothic_n7",
+    "type_heading_size": 90,
+    "type_base_font": "century_gothic_n4",
+    "type_body_size": 95,
+    "animations_enable": true,
+    "enable_product_reviews": false,
+    "enable_yotpo": false,
+    "image_hover_enable": true,
+    "sale_tags_enable": true,
+    "sale_background_color": "#be563f",
+    "sale_text_color": "#ffffff",
+    "show_promo_modal": false,
+    "promo_dev_mode": false,
+    "favicon": "shopify:\/\/shop_images\/ANRRI_Logo_4431755e-01b2-44f7-8f4b-4eeeaf099219.jpg",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#c5aa76",
+    "checkout_button_color": "#c5aa76",
+    "checkout_error_color": "#c85c42",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "c0db2ec6-130f-49a2-aed9-6940b158c52b": {
+            "type": "megamenu",
+            "settings": {
+              "title": "Eyeglasses",
+              "title_1": "",
+              "button_1": "",
+              "image_2": "shopify:\/\/shop_images\/anrri_glasses_for_women_9b89a2b7-4e9e-4632-908c-2fbdd1d3d987.jpg",
+              "title_2": "Women's eyeglasses",
+              "button_2": "",
+              "link_2": "shopify:\/\/collections\/prescription-eyeglasses-women",
+              "image_3": "shopify:\/\/shop_images\/anrri_glasses_for_men_a78b196d-1cfe-421f-b0b1-9ec38f61e7bc.jpg",
+              "title_3": "Men's eyeglasses",
+              "button_3": "",
+              "link_3": "shopify:\/\/collections\/prescription-eyeglasses-men",
+              "title_4": "",
+              "button_4": ""
+            }
+          },
+          "c014049f-dc3b-4c62-a750-31e57d380456": {
+            "type": "megamenu",
+            "settings": {
+              "title": "Blue light",
+              "image_1": "shopify:\/\/shop_images\/anrri_blue_light_glasses_for_women_6acd750f-de68-4973-b226-a0c1a076ae5e.jpg",
+              "title_1": "Women's blue light glasses",
+              "button_1": "",
+              "link_1": "shopify:\/\/collections\/blue-light-glasses",
+              "image_2": "shopify:\/\/shop_images\/anrri_blue_light_glasses_for_men_bc1b0232-dee8-4a70-b280-d10de390a06f.jpg",
+              "title_2": "Men's blue light glasses",
+              "button_2": "",
+              "link_2": "shopify:\/\/collections\/mens-blue-light-glasses",
+              "title_3": "",
+              "button_3": "",
+              "title_4": "",
+              "button_4": ""
+            }
+          },
+          "677820f8-e679-4415-af26-5b9943d81b4d": {
+            "type": "megamenu",
+            "settings": {
+              "title": "Sunglasses",
+              "image_1": "shopify:\/\/shop_images\/anrri_sunglasses_men_6b9e2913-6def-4444-85f2-d42acff2f08f.jpg",
+              "title_1": "Men's Sunglasses",
+              "button_1": "",
+              "link_1": "shopify:\/\/collections\/sunglasses",
+              "image_2": "shopify:\/\/shop_images\/anrri_sunglasses_women_194be52d-d80b-4674-913d-8c9bf9710eb1.jpg",
+              "title_2": "Women's Sunglasses",
+              "button_2": "",
+              "link_2": "shopify:\/\/collections\/sunglasses",
+              "title_3": "",
+              "button_3": "",
+              "title_4": "",
+              "button_4": ""
+            }
+          }
+        },
+        "block_order": [
+          "c0db2ec6-130f-49a2-aed9-6940b158c52b",
+          "c014049f-dc3b-4c62-a750-31e57d380456",
+          "677820f8-e679-4415-af26-5b9943d81b4d"
+        ],
+        "settings": {
+          "logo_image": "shopify:\/\/shop_images\/ANRRI_Logo_7dbbbcdb-2006-4b07-8969-e1695b9f25cf.png",
+          "logo_image_width": 200,
+          "header_style": "normal",
+          "header_transparent_home": false,
+          "header_transparent_collection": false,
+          "show_header_social": true,
+          "show_header_search": true,
+          "show_account": true,
+          "message": false,
+          "message_text": "✈ FREE SHIPPING",
+          "message_detail": "ON ALL ORDERS OVER $70",
+          "color_bg": "#efeeec",
+          "color_text": "#545454",
+          "menu_primary": "top-bar"
+        }
+      },
+      "product": {
+        "type": "product",
+        "blocks": {
+          "1823b123-cb50-4e8f-944c-db1f6c13fcf7": {
+            "type": "tab_description",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "1823b123-cb50-4e8f-944c-db1f6c13fcf7"
+        ],
+        "settings": {
+          "image_layout": "stacked",
+          "product_sticky_enable": true,
+          "show_breadcrumbs": true,
+          "show_share_buttons": true,
+          "product_show_vendor": false,
+          "show_payment_button": true,
+          "show_cart_bar": true,
+          "cart_bar_position": "bottom",
+          "tabs_enable": true,
+          "enable_video_looping": false
+        }
+      },
+      "page-contact": {
+        "type": "page-contact",
+        "blocks": {
+          "contact-1": {
+            "type": "text",
+            "settings": {
+              "title": "Full Name"
+            }
+          },
+          "contact-2": {
+            "type": "email",
+            "settings": {
+              "title": "Email"
+            }
+          },
+          "contact-3": {
+            "type": "body",
+            "settings": {
+              "title": "Message"
+            }
+          },
+          "contact-4": {
+            "type": "spacer",
+            "settings": {
+              "line": false
+            }
+          },
+          "contact-5": {
+            "type": "formHeading",
+            "settings": {
+              "title": "Optional:"
+            }
+          },
+          "contact-6": {
+            "type": "checkbox",
+            "settings": {
+              "title": "Subscribe to the newsletter"
+            }
+          },
+          "contact-7": {
+            "type": "select",
+            "settings": {
+              "title": "How did you hear about us:",
+              "label-one": "- Pick an option -",
+              "label-two": "Instagram \/ Facebook",
+              "label-three": "Web search",
+              "label-four": "Print Ad",
+              "label-five": "From a friend",
+              "label-six": ""
+            }
+          }
+        },
+        "block_order": [
+          "contact-1",
+          "contact-2",
+          "contact-3",
+          "contact-4",
+          "contact-5",
+          "contact-6",
+          "contact-7"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "index-hero": {
+        "type": "index-hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Laken_for_women_sit_in_sofa_793fe81b-3b42-4202-9cbe-3353a15bae69.jpg",
+          "parallax": false,
+          "height": "screen-height-two-thirds",
+          "overlay_opacity": 0,
+          "overlay_color": "#ffffff",
+          "title": "Prescription eyeglasses online",
+          "description": "find the perfect eyeglasses for you, available in blue light filter lens",
+          "flex_align": "align--bottom-left",
+          "text_color": "text-light",
+          "transparent": true,
+          "link_text": "shop now",
+          "link": "shopify:\/\/collections\/eyeglasses"
+        }
+      },
+      "index-image-with-text": {
+        "type": "index-image-with-text",
+        "settings": {
+          "title": "One-stop solution for eyewear",
+          "content": "<p>We spent years optimizing our approach. offer a vast selection of affordable but high-quality eyeglasses and class-defining services. Our goal is to make your choice as easy as possible.<\/p>",
+          "color": "#545454",
+          "background": "#f7f7f7",
+          "image": "shopify:\/\/shop_images\/glasses-pillows-on-bed.jpg",
+          "height": "screen-height-one-half",
+          "image_alignment": "natural",
+          "overlay_opacity": 10,
+          "overlay_color": "#ffffff",
+          "button_text": "SHOP NOW",
+          "button_link": "shopify:\/\/collections\/eyeglasses",
+          "video_link": "",
+          "button_type": "filled",
+          "button_colors": "#ffffff"
+        }
+      },
+      "index-map": {
+        "type": "index-map",
+        "settings": {
+          "height": "screen-height-one-half",
+          "title": "Map",
+          "address": "<p>123 Fake St.<br\/>Vancouver, Canada<\/p><p>Mon - Fri, 10am - 9pm<br\/>Weekends, 11am - 4pm<\/p>",
+          "button": "Directions",
+          "color_bg": "#fbfbfb",
+          "api_key": "",
+          "map_address": "404 Beach Avenue, Vancouver, BC",
+          "zoom": 12,
+          "style": "silver"
+        }
+      },
+      "index-slideshow": {
+        "type": "index-slideshow",
+        "blocks": {
+          "index-slideshow-0": {
+            "type": "image",
+            "settings": {
+              "overlay_opacity": 0,
+              "overlay_color": "#ffffff",
+              "title": "Image slide",
+              "description": "Tell your brand's story through images.",
+              "flex_align": "align--middle-center",
+              "text_color": "text-dark",
+              "transparent": true,
+              "link_text": "View products"
+            }
+          },
+          "index-slideshow-1": {
+            "type": "image",
+            "settings": {
+              "overlay_opacity": 0,
+              "overlay_color": "#ffffff",
+              "title": "Image slide",
+              "description": "Tell your brand's story through images.",
+              "flex_align": "align--middle-center",
+              "text_color": "text-dark",
+              "transparent": true,
+              "link_text": "View products"
+            }
+          }
+        },
+        "block_order": [
+          "index-slideshow-0",
+          "index-slideshow-1"
+        ],
+        "settings": {
+          "autoplay": false,
+          "autoplay_speed": 8,
+          "height": "screen-height-one-half",
+          "show_dots": false
+        }
+      },
+      "index-collections-list": {
+        "type": "index-collections-list",
+        "blocks": {
+          "index-collections-list-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "blue-light-glasses",
+              "title": ""
+            }
+          },
+          "index-collections-list-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "eyeglasses",
+              "title": ""
+            }
+          },
+          "index-collections-list-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "sunglasses",
+              "title": ""
+            }
+          },
+          "index-collections-list-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "eyeglasses-men",
+              "title": "On sale"
+            }
+          }
+        },
+        "block_order": [
+          "index-collections-list-0",
+          "index-collections-list-1",
+          "index-collections-list-2",
+          "index-collections-list-3"
+        ],
+        "settings": {
+          "title": "Collections",
+          "arrows_style": "dark"
+        }
+      },
+      "index-background-video": {
+        "type": "index-background-video",
+        "settings": {
+          "hero_video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "enable_sound": false,
+          "height": "screen-height-two-thirds",
+          "overlay_opacity": 65,
+          "overlay_color": "#ffffff",
+          "title": "Background video",
+          "main_subheading": "This subheading helps you provide some more detail to the title above.",
+          "flex_align": "align--middle-center",
+          "text_color": "text-dark",
+          "transparent": true,
+          "btn_text": "Welcome"
+        }
+      },
+      "index-look": {
+        "type": "index-look",
+        "blocks": {
+          "index-look-0": {
+            "type": "product",
+            "settings": {
+              "product": "",
+              "position_x": 50,
+              "position_y": 50
+            }
+          },
+          "index-look-1": {
+            "type": "product",
+            "settings": {
+              "product": "",
+              "position_x": 50,
+              "position_y": 50
+            }
+          }
+        },
+        "block_order": [
+          "index-look-0",
+          "index-look-1"
+        ],
+        "settings": {
+          "title": "Shop the look",
+          "section_bg": "#fafafa",
+          "dot_color": "#ffffff"
+        }
+      },
+      "index-testimonials": {
+        "type": "index-testimonials",
+        "blocks": {
+          "index-testimonial-0": {
+            "type": "testimonial",
+            "settings": {
+              "title": "Mark Corrigan",
+              "testimonial": "Use this text to showcase a review from one of your customers.  A great review is honest and speaks to the concerns of your customers.",
+              "username": "@username",
+              "tweet_url": "https:\/\/twitter.com\/"
+            }
+          },
+          "index-testimonial-1": {
+            "type": "testimonial",
+            "settings": {
+              "title": "Jeremy Usborne",
+              "testimonial": "Use this text to showcase a review from one of your customers.  A great review is honest and speaks to the concerns of your customers.",
+              "username": "@username",
+              "tweet_url": "https:\/\/twitter.com\/"
+            }
+          }
+        },
+        "block_order": [
+          "index-testimonial-0",
+          "index-testimonial-1"
+        ],
+        "settings": {
+          "testimonials_bg": "#fafafa",
+          "testimonials_items": 3,
+          "button_text_color": "#726d75",
+          "button_bg_color": "#e7e7e7"
+        }
+      },
+      "index-products": {
+        "type": "index-products",
+        "settings": {
+          "featured_collection": "blue-light-glasses",
+          "title": "Stylish frames to suit your face",
+          "grid": 3,
+          "rows": 2,
+          "enable_reviews": true,
+          "scroll": "vertically",
+          "arrows_style": "dark"
+        }
+      },
+      "index-blog": {
+        "type": "index-blog",
+        "disabled": true,
+        "settings": {
+          "blog_name": "",
+          "title": "Blog posts",
+          "blog_text": "",
+          "grid": 4,
+          "rows": 1,
+          "show_author": false,
+          "show_date": false,
+          "show_button": true,
+          "show_tags": false,
+          "overlay_opacity": 15,
+          "overlay_color": "#000000"
+        }
+      },
+      "index-rich-text": {
+        "type": "index-rich-text",
+        "settings": {
+          "title": "best way to find the perfect prescription eyeglasses",
+          "text": "<p>Start by choosing from a collection of thousands of items, starting from only $19. Continue by trying them on virtually since looks can be as important as quality and comfort. Finally, place your order, and your brand-new eyewear will soon reach your doorstep.<\/p>",
+          "button_text": "shop now",
+          "button_url": "shopify:\/\/collections\/prescription-eyeglasses"
+        }
+      },
+      "index-newsletter": {
+        "type": "index-newsletter",
+        "settings": {
+          "title": "Newsletter",
+          "richtext": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+          "width": "full",
+          "flex_align": "align--middle-left",
+          "text_color": "dark",
+          "height": "screen-height-one-third",
+          "overlay_opacity": 0,
+          "overlay_color": "#ffffff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "logo_image_width": 150,
+          "overlay_opacity": 15,
+          "overlay_color": "#000000",
+          "footer_secondary_linklist": "footer",
+          "footer_payment_enable": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "related": {
+        "type": "related",
+        "settings": {
+          "related_products_enable": true,
+          "limit": 5,
+          "product_recommendations_heading": "Related products",
+          "show_recently_viewed": true,
+          "product_recently_limit": 4,
+          "product_recently_heading": "Recently viewed"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "enable_sort": true,
+          "filter_mode": "group",
+          "show_title": true,
+          "show_description": true,
+          "text_color": "text-dark",
+          "flex_align": "align--middle-left",
+          "transparent": true,
+          "show_image": true,
+          "banner_layout": "overlay",
+          "height": "screen-height-one-third",
+          "parallax": false,
+          "overlay_opacity": 0,
+          "overlay_color": "#000000",
+          "grid": 3,
+          "product_limit": 36,
+          "enable_reviews": true,
+          "show_featured_image": false,
+          "featured_heading": "Use this image showcase promotional content.",
+          "featured_text": "<p>Elaborate on it with rich text<\/p><p><\/p>",
+          "featured_button_text": "Learn More",
+          "featured_color_text": "#ffffff",
+          "featured_color_overlay": "#222222",
+          "featured_overlay_opacity": 10
+        }
+      },
+      "zq-lens-settings": {
+        "type": "zq-lens-settings",
+        "blocks": {
+          "eb3de05e-bf2a-4caa-865d-61d9d3b39a56": {
+            "type": "note",
+            "settings": {
+              "title": "Non-prescription",
+              "note": "Lens with no vision correction"
+            }
+          },
+          "e3c27dc9-e112-47a1-a06a-bacf29780379": {
+            "type": "note",
+            "settings": {
+              "title": "Single Vision",
+              "note": "Lens for myopia, hyperopia, or astigmatism correction."
+            }
+          },
+          "212fb95a-7a69-4ccc-9704-37e5157e41d6": {
+            "type": "note",
+            "settings": {
+              "title": "1.67 high-index",
+              "note": "Our premium 1.67 index lens. Features anti-scratch, anti-reflective, UV blocking, anti-smudge, dust and water-repellent coatings."
+            }
+          },
+          "26342a02-6071-4395-98ab-1a0c8ef4791c": {
+            "type": "note",
+            "settings": {
+              "title": "Progressives",
+              "note": "lens for seeing things both close and far away."
+            }
+          },
+          "0252de8b-c14e-4375-a759-c6b5768434ca": {
+            "type": "note",
+            "settings": {
+              "title": "Upload a photo of it",
+              "note": "This is the quickest option"
+            }
+          },
+          "34b89db8-60ed-4e1d-b7cc-5699612b1a6b": {
+            "type": "note",
+            "settings": {
+              "title": "Send it to us later",
+              "note": "Our team will provide instructions via Email"
+            }
+          },
+          "fcf0b5fd-327a-4f88-88d7-d08c297711fd": {
+            "type": "note",
+            "settings": {
+              "title": "Already did it",
+              "note": "I've ordered prescription glasses before."
+            }
+          },
+          "437eedd0-b4f6-4c85-8ee4-114903f1e089": {
+            "type": "note",
+            "settings": {
+              "title": "Classic",
+              "note": "anti-scratch, impact resistant, block 100% of UV rays."
+            }
+          },
+          "9b06e3f1-3550-43d5-a562-fa1b2cb9fca5": {
+            "type": "note",
+            "settings": {
+              "title": "Blue-light-filtering",
+              "note": "protect your eyes from the negative side effects of phone, computer, and tablet screens."
+            }
+          },
+          "c6324199-add7-4389-9fce-7ac85c1e5615": {
+            "type": "note",
+            "settings": {
+              "title": "Light-responsive",
+              "note": "transition from clear to a darker tint outdoors."
+            }
+          },
+          "e15b3079-bd49-4b07-8a9f-a1739fefa721": {
+            "type": "note",
+            "settings": {
+              "title": "Polycarbonate",
+              "note": "High quality and impact resistant ."
+            }
+          },
+          "9a52ac71-6bd1-48d0-8341-edb328d1149b": {
+            "type": "note",
+            "settings": {
+              "title": "Readers",
+              "note": "Lens for simple magnification"
+            }
+          }
+        },
+        "block_order": [
+          "eb3de05e-bf2a-4caa-865d-61d9d3b39a56",
+          "e3c27dc9-e112-47a1-a06a-bacf29780379",
+          "212fb95a-7a69-4ccc-9704-37e5157e41d6",
+          "26342a02-6071-4395-98ab-1a0c8ef4791c",
+          "0252de8b-c14e-4375-a759-c6b5768434ca",
+          "34b89db8-60ed-4e1d-b7cc-5699612b1a6b",
+          "fcf0b5fd-327a-4f88-88d7-d08c297711fd",
+          "437eedd0-b4f6-4c85-8ee4-114903f1e089",
+          "9b06e3f1-3550-43d5-a562-fa1b2cb9fca5",
+          "c6324199-add7-4389-9fce-7ac85c1e5615",
+          "e15b3079-bd49-4b07-8a9f-a1739fefa721",
+          "9a52ac71-6bd1-48d0-8341-edb328d1149b"
+        ],
+        "settings": {
+          "lens_handle": "optical-lens",
+          "non_prescriptions": "Non-prescription",
+          "title_step_1": "<p>Select a prescription type<\/p>",
+          "title_step_2": "<p>Let&#x27;s get your prescription<\/p>",
+          "title_step_2_readers": "<p>Select a magnification strength<\/p>",
+          "title_step_3": "<p>Select a lens type<\/p>",
+          "title_step_3_color": "<p>Select a light-responsive lens color<\/p>",
+          "title_step_4": "<p>Select a lens material<\/p>",
+          "title_step_5": "<p>Review your selections<\/p>",
+          "title_step_5_description": "<p>With every pair, you’ll get free shipping, hassle-free returns, and our one-year, no-scratch guarantee<\/p>",
+          "image_gray": "shopify:\/\/shop_images\/Grey.png",
+          "image_brown": "shopify:\/\/shop_images\/Brown.jpg",
+          "image_green": "shopify:\/\/shop_images\/Green.jpg"
+        }
+      },
+      "cart": {
+        "type": "cart",
+        "settings": {
+          "zq_cart_info_textarea": "<p><span style=\"margin-right:15px\">✔️<\/span>Includes frame case and lens cloth<\/p><p><span style=\"margin-right:15px\">✔️<\/span>Free shipping for orders over $40<\/p><p><span style=\"margin-right:15px\">✔️<\/span>30-day free exchange or return<\/p>",
+          "allow_note": true,
+          "allow_tax_text": false,
+          "custom_tax_text": "",
+          "shipping_calculator": false,
+          "shipping_calculator_default_country": "United States",
+          "cart_show_additional_buttons": true
+        }
+      },
+      "1610010891e93e4907": {
+        "type": "covet-pics",
+        "settings": {
+          "title": "@anrrieyewear",
+          "gallery-code": "<covet-pics-widget gallery-embed-id=\"129406\"><\/covet-pics-widget>"
+        }
+      },
+      "1614225879f4c64d6e": {
+        "type": "index-image-with-text",
+        "disabled": true,
+        "settings": {
+          "title": "Magic Try-On",
+          "content": "<p>So what if it&#x27;s all smart bits and bytes instead of real magic? It still feels magical, being able to try on every piece of eyewear in our collection without having to visit a brick and mortar store. <\/p><p>Hover over a product and click the  &quot;TryOn&quot; button.<\/p><p><a href=\"https:\/\/anrri.com\/collections\/eyeglasses\" title=\"https:\/\/anrri.com\/collections\/eyeglasses\"><strong>Start now!<\/strong><\/a><\/p>",
+          "color": "#282c2e",
+          "background": "#f7f9fa",
+          "image": "shopify:\/\/shop_images\/try_on_1_45b0d9ba-a6fd-4820-a19d-35b0a68c949f.png",
+          "height": "screen-height-one-half",
+          "image_alignment": "reverse",
+          "overlay_opacity": 0,
+          "overlay_color": "#ffffff",
+          "button_text": "TRY NOW",
+          "button_link": "https:\/\/anrri.com\/collections\/eyeglasses",
+          "video_link": "",
+          "button_type": "filled",
+          "button_colors": "#eff3f5"
+        }
+      }
+    },
+    "content_for_index": [
+      "index-hero",
+      "index-products",
+      "index-rich-text",
+      "index-image-with-text",
+      "1610010891e93e4907",
+      "1614225879f4c64d6e",
+      "index-newsletter"
+    ]
+  },
+  "presets": {
+    "Clean": {
+      "text_color": "#545454",
+      "bg_color": "#ffffff",
+      "secondary_bg_color": "#F7F7F7",
+      "accent_bright": "#b1945c",
+      "accent_secondary": "#8191a4",
+      "site_border_color": "#F0F0F0",
+      "link_color": "#545454",
+      "link_hover_color": "#b1945c",
+      "header_bg": "#ffffff",
+      "header_link": "#545454",
+      "header_link_hover": "#b1945c",
+      "menu_bg_color": "#ffffff",
+      "menu_border_color": "#F0F0F0",
+      "menu_link_color": "#545454",
+      "menu_link_hover_color": "#b1945c",
+      "submenu_bg_color": "#ffffff",
+      "submenu_link_color": "#545454",
+      "submenu_link_hover_color": "#c5aa76",
+      "footer_bg": "#ffffff",
+      "footer_text": "#545454",
+      "footer_link": "#545454",
+      "footer_link_hover": "#b1945c",
+      "type_heading_font": "century_gothic_n7",
+      "type_heading_size": 90,
+      "type_base_font": "century_gothic_n4",
+      "type_body_size": 95,
+      "animations_enable": true,
+      "image_hover_enable": true,
+      "sale_tags_enable": true,
+      "sale_background_color": "#be563f",
+      "sale_text_color": "#ffffff",
+      "show_promo_modal": false,
+      "promo_dev_mode": false,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Open Sans",
+      "checkout_body_font": "Open Sans",
+      "checkout_accent_color": "#c5aa76",
+      "checkout_button_color": "#c5aa76",
+      "checkout_error_color": "#c85c42",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_header_social": true,
+            "show_header_search": true,
+            "show_account": true,
+            "message": false,
+            "color_bg": "#efeeec",
+            "color_text": "#545454",
+            "menu_primary": "main-menu"
+          }
+        },
+        "product": {
+          "type": "product",
+          "blocks": {
+            "product-tab-1": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "First",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-2": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Second",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-3": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Third",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "product-tab-1",
+            "product-tab-2",
+            "product-tab-3"
+          ],
+          "settings": {
+            "image_layout": "stacked",
+            "product_sticky_enable": true,
+            "show_breadcrumbs": true,
+            "show_share_buttons": true,
+            "product_show_vendor": false,
+            "show_payment_button": true,
+            "tabs_enable": true
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "blocks": {
+            "contact-1": {
+              "type": "text",
+              "settings": {
+                "title": "Full Name"
+              }
+            },
+            "contact-2": {
+              "type": "email",
+              "settings": {
+                "title": "Email"
+              }
+            },
+            "contact-3": {
+              "type": "body",
+              "settings": {
+                "title": "Message"
+              }
+            },
+            "contact-4": {
+              "type": "spacer",
+              "settings": {
+                "line": false
+              }
+            },
+            "contact-5": {
+              "type": "formHeading",
+              "settings": {
+                "title": "Optional:"
+              }
+            },
+            "contact-6": {
+              "type": "checkbox",
+              "settings": {
+                "title": "Subscribe to the newsletter"
+              }
+            },
+            "contact-7": {
+              "type": "select",
+              "settings": {
+                "title": "How did you hear about us:",
+                "label-one": "- Pick an option -",
+                "label-two": "Instagram \/ Facebook",
+                "label-three": "Web search",
+                "label-four": "Print Ad",
+                "label-five": "From a friend",
+                "label-six": ""
+              }
+            }
+          },
+          "block_order": [
+            "contact-1",
+            "contact-2",
+            "contact-3",
+            "contact-4",
+            "contact-5",
+            "contact-6",
+            "contact-7"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "index-hero": {
+          "type": "index-hero",
+          "settings": {
+            "parallax": false,
+            "height": "screen-height-two-thirds",
+            "overlay_opacity": 0,
+            "flex_align": "align--middle-center",
+            "text_color": "text-dark"
+          }
+        },
+        "index-image-with-text": {
+          "type": "index-image-with-text",
+          "settings": {
+            "color": "#545454",
+            "background": "#f7f7f7",
+            "height": "screen-height-one-half",
+            "overlay_opacity": 0
+          }
+        },
+        "index-map": {
+          "type": "index-map",
+          "settings": {}
+        },
+        "index-slideshow": {
+          "type": "index-slideshow",
+          "blocks": {
+            "index-slideshow-0": {
+              "type": "image",
+              "settings": {
+                "overlay_opacity": 0,
+                "text_color": "text-dark"
+              }
+            },
+            "index-slideshow-1": {
+              "type": "image",
+              "settings": {
+                "overlay_opacity": 0,
+                "text_color": "text-dark"
+              }
+            }
+          },
+          "block_order": [
+            "index-slideshow-0",
+            "index-slideshow-1"
+          ],
+          "settings": {
+            "autoplay": false,
+            "autoplay_speed": 8,
+            "height": "screen-height-one-half"
+          }
+        },
+        "index-collections-list": {
+          "type": "index-collections-list",
+          "blocks": {
+            "index-collections-list-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-3": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-collections-list-0",
+            "index-collections-list-1",
+            "index-collections-list-2",
+            "index-collections-list-3"
+          ],
+          "settings": {
+            "title": "Collections"
+          }
+        },
+        "index-background-video": {
+          "type": "index-background-video",
+          "settings": {
+            "overlay_opacity": 65
+          }
+        },
+        "index-look": {
+          "type": "index-look",
+          "blocks": {
+            "index-look-0": {
+              "type": "product",
+              "settings": {}
+            },
+            "index-look-1": {
+              "type": "product",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-look-0",
+            "index-look-1"
+          ],
+          "settings": {}
+        },
+        "index-testimonials": {
+          "type": "index-testimonials",
+          "blocks": {
+            "index-testimonial-0": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Mark Corrigan"
+              }
+            },
+            "index-testimonial-1": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Jeremy Usborne"
+              }
+            }
+          },
+          "block_order": [
+            "index-testimonial-0",
+            "index-testimonial-1"
+          ],
+          "settings": {}
+        },
+        "index-products": {
+          "type": "index-products",
+          "settings": {}
+        },
+        "index-blog": {
+          "type": "index-blog",
+          "settings": {}
+        },
+        "index-rich-text": {
+          "type": "index-rich-text",
+          "settings": {}
+        },
+        "index-newsletter": {
+          "type": "index-newsletter",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "index-hero",
+        "index-collections-list",
+        "index-image-with-text",
+        "index-products",
+        "index-testimonials",
+        "index-map",
+        "index-background-video",
+        "index-rich-text",
+        "index-slideshow",
+        "index-blog",
+        "index-look",
+        "index-newsletter"
+      ]
+    },
+    "Modern": {
+      "text_color": "#2b2b2b",
+      "bg_color": "#ffffff",
+      "secondary_bg_color": "#f7f9fa",
+      "accent_bright": "#007efc",
+      "accent_secondary": "#2B2B2B",
+      "site_border_color": "#f3f3f3",
+      "link_color": "#2b333b",
+      "link_hover_color": "#007efc",
+      "header_bg": "#ffffff",
+      "header_link": "#3b434b",
+      "header_link_hover": "#007efc",
+      "menu_bg_color": "#2b2b2b",
+      "menu_border_color": "#2b2b2b",
+      "menu_link_color": "#ffffff",
+      "menu_link_hover_color": "#c8e4f2",
+      "submenu_bg_color": "#2b2b2b",
+      "submenu_link_color": "#ffffff",
+      "submenu_link_hover_color": "#c8e4f2",
+      "footer_bg": "#1f1f1f",
+      "footer_text": "#ffffff",
+      "footer_link": "#e1e1e1",
+      "footer_link_hover": "#808080",
+      "type_heading_font": "monotype_news_gothic_n4",
+      "type_heading_size": 100,
+      "type_base_font": "monotype_news_gothic_n4",
+      "type_body_size": 95,
+      "animations_enable": false,
+      "image_hover_enable": false,
+      "sale_tags_enable": true,
+      "sale_background_color": "#ed6161",
+      "sale_text_color": "#ffffff",
+      "show_promo_modal": false,
+      "promo_dev_mode": false,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Open Sans",
+      "checkout_body_font": "Open Sans",
+      "checkout_accent_color": "#007efc",
+      "checkout_button_color": "#007efc",
+      "checkout_error_color": "#ed6161",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_header_social": true,
+            "show_header_search": true,
+            "show_account": true,
+            "message": false,
+            "color_bg": "#efeeec",
+            "color_text": "#545454",
+            "menu_primary": "main-menu"
+          }
+        },
+        "product": {
+          "type": "product",
+          "blocks": {
+            "product-tab-1": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "First",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-2": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Second",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-3": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Third",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "product-tab-1",
+            "product-tab-2",
+            "product-tab-3"
+          ],
+          "settings": {
+            "image_layout": "thumbnails",
+            "product_sticky_enable": false,
+            "show_breadcrumbs": true,
+            "show_share_buttons": false,
+            "product_show_vendor": false,
+            "show_payment_button": true,
+            "tabs_enable": false
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "blocks": {
+            "contact-1": {
+              "type": "text",
+              "settings": {
+                "title": "Full Name"
+              }
+            },
+            "contact-2": {
+              "type": "email",
+              "settings": {
+                "title": "Email"
+              }
+            },
+            "contact-3": {
+              "type": "body",
+              "settings": {
+                "title": "Message"
+              }
+            },
+            "contact-4": {
+              "type": "spacer",
+              "settings": {
+                "line": false
+              }
+            },
+            "contact-5": {
+              "type": "formHeading",
+              "settings": {
+                "title": "Optional:"
+              }
+            },
+            "contact-6": {
+              "type": "checkbox",
+              "settings": {
+                "title": "Subscribe to the newsletter"
+              }
+            },
+            "contact-7": {
+              "type": "select",
+              "settings": {
+                "title": "How did you hear about us:",
+                "label-one": "- Pick an option -",
+                "label-two": "Instagram \/ Facebook",
+                "label-three": "Web search",
+                "label-four": "Print Ad",
+                "label-five": "From a friend",
+                "label-six": ""
+              }
+            }
+          },
+          "block_order": [
+            "contact-1",
+            "contact-2",
+            "contact-3",
+            "contact-4",
+            "contact-5",
+            "contact-6",
+            "contact-7"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "index-hero": {
+          "type": "index-hero",
+          "settings": {
+            "parallax": false,
+            "height": "screen-height-two-thirds",
+            "overlay_opacity": 0,
+            "flex_align": "align--middle-center",
+            "text_color": "text-dark"
+          }
+        },
+        "index-image-with-text": {
+          "type": "index-image-with-text",
+          "settings": {
+            "color": "#282c2e",
+            "background": "#f7f9fa",
+            "height": "screen-height-one-half",
+            "overlay_opacity": 0
+          }
+        },
+        "index-map": {
+          "type": "index-map",
+          "settings": {}
+        },
+        "index-slideshow": {
+          "type": "index-slideshow",
+          "blocks": {
+            "index-slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "index-slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-slideshow-0",
+            "index-slideshow-1"
+          ],
+          "settings": {
+            "autoplay": false,
+            "autoplay_speed": 8,
+            "height": "screen-height-one-half"
+          }
+        },
+        "index-collections-list": {
+          "type": "index-collections-list",
+          "blocks": {
+            "index-collections-list-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-3": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-collections-list-0",
+            "index-collections-list-1",
+            "index-collections-list-2",
+            "index-collections-list-3"
+          ],
+          "settings": {
+            "title": "Collections"
+          }
+        },
+        "index-background-video": {
+          "type": "index-background-video",
+          "settings": {
+            "overlay_opacity": 65
+          }
+        },
+        "index-look": {
+          "type": "index-look",
+          "blocks": {
+            "index-look-0": {
+              "type": "product",
+              "settings": {}
+            },
+            "index-look-1": {
+              "type": "product",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-look-0",
+            "index-look-1"
+          ],
+          "settings": {}
+        },
+        "index-testimonials": {
+          "type": "index-testimonials",
+          "blocks": {
+            "index-testimonial-0": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Mark Corrigan"
+              }
+            },
+            "index-testimonial-1": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Jeremy Usborne"
+              }
+            }
+          },
+          "block_order": [
+            "index-testimonial-0",
+            "index-testimonial-1"
+          ],
+          "settings": {}
+        },
+        "index-products": {
+          "type": "index-products",
+          "settings": {}
+        },
+        "index-blog": {
+          "type": "index-blog",
+          "settings": {}
+        },
+        "index-rich-text": {
+          "type": "index-rich-text",
+          "settings": {}
+        },
+        "index-newsletter": {
+          "type": "index-newsletter",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "index-hero",
+        "index-collections-list",
+        "index-image-with-text",
+        "index-products",
+        "index-testimonials",
+        "index-map",
+        "index-background-video",
+        "index-rich-text",
+        "index-slideshow",
+        "index-blog",
+        "index-look",
+        "index-newsletter"
+      ]
+    },
+    "Bold": {
+      "text_color": "#040f0f",
+      "bg_color": "#ffffff",
+      "secondary_bg_color": "#f7f7f7",
+      "accent_bright": "#248232",
+      "accent_secondary": "#418383",
+      "site_border_color": "#f7f7f7",
+      "link_color": "#418383",
+      "link_hover_color": "#165858",
+      "header_bg": "#040f0f",
+      "header_link": "#ffffff",
+      "header_link_hover": "#cfe0d3",
+      "menu_bg_color": "#040f0f",
+      "menu_border_color": "#040f0f",
+      "menu_link_color": "#ffffff",
+      "menu_link_hover_color": "#cfe0d3",
+      "submenu_bg_color": "#040f0f",
+      "submenu_link_color": "#ffffff",
+      "submenu_link_hover_color": "#7a9f82",
+      "menu_transparent_color": "#ffffff",
+      "footer_bg": "#040f0f",
+      "footer_text": "#ffffff",
+      "footer_link": "#ffffff",
+      "footer_link_hover": "#74937c",
+      "type_heading_font": "cardo_n7",
+      "type_heading_size": 95,
+      "type_base_font": "harmonia_sans_n4",
+      "type_body_size": 100,
+      "animations_enable": true,
+      "image_hover_enable": false,
+      "sale_tags_enable": true,
+      "sale_background_color": "#444444",
+      "sale_text_color": "#ffffff",
+      "show_promo_modal": false,
+      "promo_dev_mode": false,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Open Sans",
+      "checkout_body_font": "Open Sans",
+      "checkout_accent_color": "#248232",
+      "checkout_button_color": "#268686",
+      "checkout_error_color": "#8b3f3f",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_header_social": true,
+            "show_header_search": true,
+            "show_account": true,
+            "message": false,
+            "color_bg": "#101A26",
+            "color_text": "#EEEEEE",
+            "menu_primary": "main-menu"
+          }
+        },
+        "product": {
+          "type": "product",
+          "blocks": {
+            "product-tab-1": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "First",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-2": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Second",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            },
+            "product-tab-3": {
+              "type": "tab_richtext",
+              "settings": {
+                "title": "Third",
+                "raw_content": "<p>This tab content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "product-tab-1",
+            "product-tab-2",
+            "product-tab-3"
+          ],
+          "settings": {
+            "image_layout": "stacked",
+            "product_sticky_enable": true,
+            "show_breadcrumbs": true,
+            "show_share_buttons": true,
+            "product_show_vendor": false,
+            "show_payment_button": true,
+            "tabs_enable": true
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "blocks": {
+            "contact-1": {
+              "type": "text",
+              "settings": {
+                "title": "Full Name"
+              }
+            },
+            "contact-2": {
+              "type": "email",
+              "settings": {
+                "title": "Email"
+              }
+            },
+            "contact-3": {
+              "type": "body",
+              "settings": {
+                "title": "Message"
+              }
+            },
+            "contact-4": {
+              "type": "spacer",
+              "settings": {
+                "line": false
+              }
+            },
+            "contact-5": {
+              "type": "formHeading",
+              "settings": {
+                "title": "Optional:"
+              }
+            },
+            "contact-6": {
+              "type": "checkbox",
+              "settings": {
+                "title": "Subscribe to the newsletter"
+              }
+            },
+            "contact-7": {
+              "type": "select",
+              "settings": {
+                "title": "How did you hear about us:",
+                "label-one": "- Pick an option -",
+                "label-two": "Instagram \/ Facebook",
+                "label-three": "Web search",
+                "label-four": "Print Ad",
+                "label-five": "From a friend",
+                "label-six": ""
+              }
+            }
+          },
+          "block_order": [
+            "contact-1",
+            "contact-2",
+            "contact-3",
+            "contact-4",
+            "contact-5",
+            "contact-6",
+            "contact-7"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "index-hero": {
+          "type": "index-hero",
+          "settings": {
+            "parallax": false,
+            "height": "screen-height-two-thirds",
+            "overlay_opacity": 0,
+            "flex_align": "align--middle-center",
+            "text_color": "text-dark"
+          }
+        },
+        "index-image-with-text": {
+          "type": "index-image-with-text",
+          "settings": {
+            "color": "#2d2d2d",
+            "background": "#f5f2ef",
+            "height": "screen-height-one-half",
+            "overlay_opacity": 0
+          }
+        },
+        "index-map": {
+          "type": "index-map",
+          "settings": {}
+        },
+        "index-slideshow": {
+          "type": "index-slideshow",
+          "blocks": {
+            "index-slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "index-slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-slideshow-0",
+            "index-slideshow-1"
+          ],
+          "settings": {
+            "autoplay": false,
+            "autoplay_speed": 8,
+            "height": "screen-height-one-half"
+          }
+        },
+        "index-collections-list": {
+          "type": "index-collections-list",
+          "blocks": {
+            "index-collections-list-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "index-collections-list-3": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-collections-list-0",
+            "index-collections-list-1",
+            "index-collections-list-2",
+            "index-collections-list-3"
+          ],
+          "settings": {
+            "title": "Collections"
+          }
+        },
+        "index-background-video": {
+          "type": "index-background-video",
+          "settings": {
+            "overlay_opacity": 65
+          }
+        },
+        "index-look": {
+          "type": "index-look",
+          "blocks": {
+            "index-look-0": {
+              "type": "product",
+              "settings": {}
+            },
+            "index-look-1": {
+              "type": "product",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "index-look-0",
+            "index-look-1"
+          ],
+          "settings": {}
+        },
+        "index-testimonials": {
+          "type": "index-testimonials",
+          "blocks": {
+            "index-testimonial-0": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Mark Corrigan"
+              }
+            },
+            "index-testimonial-1": {
+              "type": "testimonial",
+              "settings": {
+                "title": "Jeremy Usborne"
+              }
+            }
+          },
+          "block_order": [
+            "index-testimonial-0",
+            "index-testimonial-1"
+          ],
+          "settings": {}
+        },
+        "index-products": {
+          "type": "index-products",
+          "settings": {}
+        },
+        "index-blog": {
+          "type": "index-blog",
+          "settings": {}
+        },
+        "index-rich-text": {
+          "type": "index-rich-text",
+          "settings": {}
+        },
+        "index-newsletter": {
+          "type": "index-newsletter",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "index-hero",
+        "index-collections-list",
+        "index-image-with-text",
+        "index-products",
+        "index-testimonials",
+        "index-map",
+        "index-background-video",
+        "index-rich-text",
+        "index-slideshow",
+        "index-blog",
+        "index-look",
+        "index-newsletter"
+      ]
+    }
+  }
+}

@@ -1,0 +1,201 @@
+/*********************** Custom CSS for Boost Filter & Search  ************************/
+{% assign breakpointMobile = '767px' %}
+{% assign breakpointDesktop = '768px' %}
+{% assign searchBoxMobileHeight = '64px' %}
+
+/**************************** Place your custom css below  ****************************/
+.collection__nav--sort {
+  justify-content: flex-end;
+  background: white;
+  padding-top: 30px;
+}
+
+.bc-page-width {
+  width: 100%;
+  background: white;
+}
+
+.bc-filter-tree-h-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.boost-pfs-filter-top-sorting {
+  height: 50px;
+  margin-right: 20px;
+  margin-top: -10px;
+}
+
+.boost-pfs-filter-tree {
+  margin: 0 20px 0 20px;
+  width: initial !important;
+}
+
+.boost-pfs-filter-tree-h {
+  flex: 1;
+  margin: 0 20px 0 20px;
+}
+
+@media only screen and (max-width: {{breakpointMobile}}) {
+  .boost-pfs-filter-tree-mobile {
+    margin: 20px;
+  }
+
+  .boost-pfs-filter-top-sorting {
+    margin: 0 20px 0 20px;
+  }
+
+  .boost-pfs-filter-top-sorting select {
+    width: 100%;
+  }
+}
+button.boost-pfs-filter-button:hover, button.boost-pfs-filter-button:focus {
+  color: initial;
+  background: initial;
+}
+
+button.boost-pfs-filter-button:active {
+  transform: none;
+}
+
+/**** Custom Search result toolbar ****/
+.boost-pfs-search-result-toolbar {
+  display: flex;
+  align-items: center;
+  margin: 35px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  white-space: nowrap;
+}
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-item:first-child {
+  flex: auto;
+}
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-panel-controls {
+  padding: 17px 0;
+  margin: 0;
+}
+.boost-pfs-search-result-toolbar .boost-pfs-search-result-panel-item {
+  margin-bottom: 0;
+}
+.boost-pfs-search-result-toolbar button {
+  color: #545454;
+  padding: 5px 0;
+  white-space: normal;
+}
+@media (max-width: {{breakpointMobile}}) {
+  .boost-pfs-search-result-toolbar .boost-pfs-search-total-result {
+    display: none;
+  }
+}
+.boost-pfs-search-result-toolbar + .collection__nav {
+  padding-top: 0;
+}
+
+.boost-pfs-search-result-list-item-image img {
+  max-width: 100%;
+}
+
+.boost-pfs-search-result-collections .boost-pfs-search-result-list-item, .boost-pfs-search-result-pages .boost-pfs-search-result-list-item {
+  padding: 20px;
+}
+
+.boost-pfs-filter-message {
+  padding-left: 20px;
+}
+
+.boost-pfs-total-products {
+  padding-top: 7px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: {{breakpointMobile}}) {
+  .boost-pfs-total-products {
+    margin-left: 10px;
+    padding-top: 20px;
+  }
+  
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close span {
+    background: #B1945C;
+  }
+  
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-footer button {
+    background: #B1945C;
+  }
+  
+  .boost-pfs-filter-products {
+    width: 100%;
+    margin: auto;
+  }
+  
+  .bc-filter-tree-h-wrapper {
+    display: none;
+  }
+  
+  .collection__nav--sort {
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .boost-pfs-filter-tree-mobile-button {
+    width: 30% !important;
+    margin: 0px;
+  }
+  
+  .boost-pfs-filter-top-sorting {
+    margin: 0px;
+    margin-left: 10px;
+    align-self: flex-start;
+    display: inline-flex;
+    height: 35px;
+  }
+  
+  .boost-pfs-filter-top-sorting select {
+    margin: 0px;
+    padding: 0px;
+    align-self: flex-start;
+  }
+  
+  .boost-pfs-filter-top-sorting label {
+    width: 40%;
+  }
+}
+
+/* .virtooal-tryon-btn-collection-corner-wrapper {
+  display: none !important;
+} */
+
+div.boost-pfs-filter-tree-mobile-button button {
+    margin: 0px;
+    position: relative;
+    background: none !important;
+    color: inherit !important;
+    font-size: 16px;
+    padding: 0;
+}
+
+.boost-pfs-filter-tree-mobile-button button:before {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.8 3.2H3.348C3.6792 4.1288 4.5584 4.8 5.6 4.8C6.6416 4.8 7.5208 4.1288 7.852 3.2H15.2C15.6424 3.2 16 2.8424 16 2.4C16 1.9576 15.6424 1.6 15.2 1.6H7.852C7.5208 0.6712 6.6416 0 5.6 0C4.5584 0 3.6792 0.6712 3.348 1.6H0.8C0.3576 1.6 0 1.9576 0 2.4C0 2.8424 0.3576 3.2 0.8 3.2ZM15.2 12.8H7.852C7.5208 11.8712 6.6416 11.2 5.6 11.2C4.5584 11.2 3.6792 11.8712 3.348 12.8H0.8C0.3576 12.8 0 13.1576 0 13.6C0 14.0424 0.3576 14.4 0.8 14.4H3.348C3.6792 15.3288 4.5584 16 5.6 16C6.6416 16 7.5208 15.3288 7.852 14.4H15.2C15.6424 14.4 16 14.0424 16 13.6C16 13.1576 15.6424 12.8 15.2 12.8ZM15.2 7.2H12.652C12.3208 6.2712 11.4416 5.6 10.4 5.6C9.3584 5.6 8.4792 6.2712 8.148 7.2H0.8C0.3576 7.2 0 7.5576 0 8C0 8.4424 0.3576 8.8 0.8 8.8H8.148C8.4792 9.7288 9.3584 10.4 10.4 10.4C11.4416 10.4 12.3208 9.7288 12.652 8.8H15.2C15.6424 8.8 16 8.4424 16 8C16 7.5576 15.6424 7.2 15.2 7.2ZM5.6 1.6C6.0416 1.6 6.4 1.9584 6.4 2.4C6.4 2.8416 6.0416 3.2 5.6 3.2C5.1584 3.2 4.8 2.8416 4.8 2.4C4.8 1.9584 5.1584 1.6 5.6 1.6ZM5.6 14.4C5.1584 14.4 4.8 14.0416 4.8 13.6C4.8 13.1584 5.1584 12.8 5.6 12.8C6.0416 12.8 6.4 13.1584 6.4 13.6C6.4 14.0416 6.0416 14.4 5.6 14.4ZM10.4 8.8C9.9584 8.8 9.6 8.4416 9.6 8C9.6 7.5584 9.9584 7.2 10.4 7.2C10.8416 7.2 11.2 7.5584 11.2 8C11.2 8.4416 10.8416 8.8 10.4 8.8Z' fill='%23222222'/%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.8 3.2H3.348C3.6792 4.1288 4.5584 4.8 5.6 4.8C6.6416 4.8 7.5208 4.1288 7.852 3.2H15.2C15.6424 3.2 16 2.8424 16 2.4C16 1.9576 15.6424 1.6 15.2 1.6H7.852C7.5208 0.6712 6.6416 0 5.6 0C4.5584 0 3.6792 0.6712 3.348 1.6H0.8C0.3576 1.6 0 1.9576 0 2.4C0 2.8424 0.3576 3.2 0.8 3.2ZM15.2 12.8H7.852C7.5208 11.8712 6.6416 11.2 5.6 11.2C4.5584 11.2 3.6792 11.8712 3.348 12.8H0.8C0.3576 12.8 0 13.1576 0 13.6C0 14.0424 0.3576 14.4 0.8 14.4H3.348C3.6792 15.3288 4.5584 16 5.6 16C6.6416 16 7.5208 15.3288 7.852 14.4H15.2C15.6424 14.4 16 14.0424 16 13.6C16 13.1576 15.6424 12.8 15.2 12.8ZM15.2 7.2H12.652C12.3208 6.2712 11.4416 5.6 10.4 5.6C9.3584 5.6 8.4792 6.2712 8.148 7.2H0.8C0.3576 7.2 0 7.5576 0 8C0 8.4424 0.3576 8.8 0.8 8.8H8.148C8.4792 9.7288 9.3584 10.4 10.4 10.4C11.4416 10.4 12.3208 9.7288 12.652 8.8H15.2C15.6424 8.8 16 8.4424 16 8C16 7.5576 15.6424 7.2 15.2 7.2ZM5.6 1.6C6.0416 1.6 6.4 1.9584 6.4 2.4C6.4 2.8416 6.0416 3.2 5.6 3.2C5.1584 3.2 4.8 2.8416 4.8 2.4C4.8 1.9584 5.1584 1.6 5.6 1.6ZM5.6 14.4C5.1584 14.4 4.8 14.0416 4.8 13.6C4.8 13.1584 5.1584 12.8 5.6 12.8C6.0416 12.8 6.4 13.1584 6.4 13.6C6.4 14.0416 6.0416 14.4 5.6 14.4ZM10.4 8.8C9.9584 8.8 9.6 8.4416 9.6 8C9.6 7.5584 9.9584 7.2 10.4 7.2C10.8416 7.2 11.2 7.5584 11.2 8C11.2 8.4416 10.8416 8.8 10.4 8.8Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3C/g%3E%3C/svg%3E%0A");
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -8px;
+}
+
+.boost-pfs-filter-top-sorting select {
+   border: none;
+   font-weight: bold;
+}
+
+.collection__nav.collection__nav--sort.bc-sf-filter-sticky-h {
+  position: fixed; 
+  background: #fff; 
+  border-bottom: 1px solid #bfbfbf;
+  z-index: 999;
+}

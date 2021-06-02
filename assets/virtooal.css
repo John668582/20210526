@@ -1,0 +1,61 @@
+.virtooal-tryon-btn {display: none;}
+.virtooal-tryon-btn.virtooal-tryon-btn-collection-page.virtooal-tryon-btn-slideup {
+  width: 100%;
+  border: 0;
+  padding: 1.6em 0;
+  background: none;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 0.76em;
+  font-family: "Century Gothic",sans-serif;
+  font-weight: 400;
+}
+
+
+.virtooal-tryon-btn-collection-corner-wrapper {
+  position: absolute;
+  width: 100%;
+  display: none;
+  bottom: 1px;
+  left: 0;
+}
+
+.virtooal-tryon-btn.virtooal-tryon-btn-collection-page.virtooal-tryon-btn-corner {
+  padding: 0.6em;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 0.76em;
+  font-family: "Century Gothic",sans-serif;
+  font-weight: 400;
+  z-index: 10;
+  border: 0px solid #a5874f;
+  background-color: #fff;
+  color: #a5874f;
+  width: 100%;
+  margin: auto;
+  outline: 1px solid #a5874f;
+}
+
+
+.virtooalBtnContainer {padding-right: 10px;}
+.virtooal-tryon-btn.virtooal-tryon-btn-product-page {
+  width: 100%;
+  border: 1px solid #a5874f;
+  background-color: #fff;
+  height: 40px;
+  font-size: 0.9975rem;
+  font-weight: 700;
+  color: #b1945c;
+  transition: all 0.15s ease;
+  margin: 0 0 20px 0;
+}
+.virtooal-tryon-btn.virtooal-tryon-btn-product-page:hover {
+  background-color: #a5874f;
+  color: #fff;
+}
+
+@media all and (max-width:950px){
+  .virtooal-tryon-btn-collection-corner-wrapper {
+    display: block;
+  }
+}

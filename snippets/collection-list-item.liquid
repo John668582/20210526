@@ -1,0 +1,60 @@
+<!-- /snippets/collection-list-item.liquid -->
+
+{% comment %}
+    Renders a list of collections in grid format
+
+    Accepts:
+    - collection: {Object} Collction to render (required)
+    - grid_strings: {String} contains a string of grid classes
+
+    Usage:
+    {% render 'collection-list-item', collection: collection, grid_strings: grid_strings %}
+{% endcomment %}
+
+{% if collection == empty %}
+  <div class="collection-item {{ grid_strings }} collection-item--no-image">
+    <div class="collection-item__image svg-placeholder">
+      {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+      {{ 'collection-' | append: current | placeholder_svg_tag }}
+    </div>
+    <div class="collection-item__info">
+      <h2 class="h3">{% if collection_title != blank %}{{ collection_title }}{% else %}{{ 'collections.general.items.heading' | t }}{% endif %}</h2>
+    </div>
+  </div>
+{% else %}
+  <div class="collection-item {{ grid_strings }}" {{ block.shopify_attributes }}>
+      <a aria-label="{{ collection.title }}" href="{{ collection.url }}" class="collection-item__image">
+        {% if collection.image %}
+            {%- assign img_object = collection.image -%}
+        {%- elsif collection.products.first -%}
+          {%- assign img_object = collection.products.first.featured_media.preview_image -%}
+        {%- endif -%}
+        <div class="collection-item__bg lazyload"
+          data-aos="img-in"
+          data-aos-delay="{{ animation_delay | times: 150 }}"
+          data-aos-duration="{{ animation_delay | times: 100 | plus: 800 }}"
+          data-aos-easing="ease-out-quart"
+          data-bgset="{% render 'bgset', image: img_object %}"></div>
+      </a>
+      <noscript>
+        <a aria-label="{{ collection.title }}" href="{{ collection.url }}"
+        class="collection-item__image" style="background-image:url('{{ collection.image | img_url: '540x' }}'); background-size: cover; background-position: center center; background-repeat: no-repeat;"
+        >
+        </a>
+      </noscript>
+    <div class="collection-item__info"
+      data-aos="fade-up"
+      data-aos-delay="{{ animation_delay | times: 100 }}"
+      data-aos-duration="{{ animation_delay | times: 100 | plus: 100 }}">
+      <a tabindex="-1" href="{{ product.url }}">
+        <h2 class="h3">
+          {% if collection_title != blank %}
+            {{ collection_title }}
+          {% else %}
+            {{ collection.title }}
+          {% endif %}
+        </h2>
+      </a>
+    </div>
+  </div>
+{%- endif -%}

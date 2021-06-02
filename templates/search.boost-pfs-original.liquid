@@ -1,0 +1,69 @@
+<!-- /templates/search.liquid -->
+
+{%- assign grid_strings = 'large-up--one-quarter medium--one-half small--one-half' -%}
+
+<section class="page search-page">
+  <h2 class="theme">{{ 'general.search.title' | t }}</h2>
+  {% if search.performed %}
+  	{% paginate search.results by 12 %}
+      {% if search.results == empty %}
+        <div class="search-outer">
+          <div class="search-results-text center">
+            <p>{{ 'general.search.no_results_html' | t: terms: search.terms | escape }}</p>
+          </div>
+          <form action="{{ routes.search_url }}" class="search-form">
+            <input type="hidden" name="type" value="product"/>
+            <input
+              type="text"
+              name="q"
+              class="search-box"
+              placeholder="{{ 'general.search.title' | t }}"
+              aria-label="{{ 'general.search.placeholder' | t }}"
+              value="{{ search.terms }}"/>
+            <button type="submit" class="btn search-submit">{{ 'general.search.submit' | t }}</button>
+          </form>
+        </div>
+      {% else %}
+      <div class="search-outer">
+        <form action="{{ routes.search_url }}" class="search-form">
+          <input type="hidden" name="type" value="product"/>
+          <input
+          type="text"
+          name="q"
+          class="search-box"
+          aria-label="{{ 'general.search.placeholder' | t }}"
+          placeholder="{{ 'general.search.title' | t }}"
+          value="{{ search.terms }}"/>
+          <button type="submit" class="btn search-submit">{{ 'general.search.submit' | t }}</button>
+        </form>
+      </div>
+    	<div class="search-results-text theme gutter-bottom">
+        <p>{{ 'general.search.results_for_html' | t: terms: search.terms | escape }}</p>
+      </div>
+        <div class="product-grid product-grid--search" id="SearchLoop">
+            {% for product in search.results %}
+              {% if product.type != 'Lens' %}
+              {% render 'product-grid-item', product: product, grid_strings: grid_strings %}
+              {% endif %}
+            {% endfor %}
+        </div>
+      {% endif %}
+
+      {% render 'pagination', paginate: paginate %}
+    {% endpaginate %}
+  {% else %}
+  	<div class="search-outer">
+      <form action="{{ routes.search_url }}" class="search-form">
+          <input type="hidden" name="type" value="product"/>
+          <input
+            type="text"
+            name="q"
+            class="search-box"
+            aria-label="{{ 'general.search.placeholder' | t }}"
+            placeholder="{{ 'general.search.title' | t }}"
+            value="{{ search.terms }}"/>
+          <button type="submit" class="btn search-submit">{{ 'general.search.submit' | t }}</button>
+      </form>
+    </div>
+  {% endif %}
+</section>

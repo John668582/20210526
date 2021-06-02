@@ -1,0 +1,114 @@
+<form action="{{ routes.cart_url }}" method="post" id="CartForm" class="just">
+  <div id="CartOuter">
+    <div id="cart-items">
+      {% for item in cart.items %}
+        {% assign productType = item.product.type | handle %}
+        <!-- {{productType}} -- {{ item.title }} -->
+        {% assign lens = item.properties['_lens_id'] %}
+        {% if lens %}
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <div class="img-wrap">
+                <img src="{{ item.image | img_url: '600x' }}" />
+              </div>
+            </div>
+            <div class="cart-item-right">
+
+              <div class="item-info-li item-info-title">
+                <h2 class="zq-title"><a href="{{ item.url }}">{{ item.product.title }}</a></h2>
+                {% if item.variant.title != 'Default Title' %}
+                <p class="zq-option">{{ item.variant.title }}</p>
+                {% endif %}
+              </div>
+
+              <div class="item-info-li item-info-lr item-info-lens">
+                <div class="item-info-li-name">Lens:</div>
+                <div class="item-info-li-content" data-lens-json='{{ item.properties | json }}'></div>
+              </div>
+
+              <div class="item-info-li item-info-lr item-info-qty">
+                <div class="item-info-li-name">Qty:</div>
+                <div class="item-info-li-content">
+                  <select>
+                    <option value="1">1</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        {% else %}
+          {% if productType != 'lens' %}
+            <!-- 其他 -->
+            <div class="cart-item" data-line="{{ forloop.index }}" data-quantity="{{item.quantity}}">
+              <div class="cart-item-left">
+                <div class="img-wrap">
+                  <div class="img-wrap-site">
+                    <img src="{{ item.image | img_url: '600x' }}" />
+                  </div>
+                </div>
+              </div>
+              <div class="cart-item-right">
+                <div class="item-info-li item-info-title">
+                  <h2 class="zq-title"><a href="{{ item.url }}">{{ item.product.title }}</a></h2>
+                  {% if item.variant.title != 'Default Title' %}
+                  <p class="zq-option">{{ item.variant.title }}</p>
+                  {% endif %}
+                </div>
+
+                <div class="item-info-li item-info-qty" data-qty="{{ item.quantity }}">
+                  <p class="bm-span-left-right">
+                    <span style="display: none;">Quantity</span><span>x{{ item.quantity }}</span>
+                  </p>
+                </div>
+
+                <div class="items-subtotal">
+                  <h6 class="bm-span-left-right">
+                    <div style="display: none;">Subtotal</div>
+                    <div>
+                      <span class="item-info-switch-btn">
+                        <svg t="1609654075908" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 281.002667l-374.528 374.528 60.330667 60.330666 314.453333-313.984 310.912 310.954667 60.330667-60.330667z"></path></svg>
+                      </span>
+                      <span data-price-to-money="{{ item.original_line_price }}"></span>
+                    </div>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          {% endif%}
+        {% endif %}
+      {% endfor %}
+    
+    </div>
+  </div>
+  <div class="cart-info-container">
+
+    <h4 class="cart-info-title">Summary</h4>
+    <div class="cart-item-count"><span style="margin-right: 10px;">item:</span><span data-cart-count></span></div>
+    <div class="cart-info-textarea">
+      {{ section.settings.zq_cart_info_textarea }}
+    </div>
+
+    {%- if cart.cart_level_discount_applications.size > 0 -%}
+      <h4 class="info__subtotal--before">
+        <span class="cart__discounts__title">{{ 'layout.cart.items.other' | t | capitalize }}:</span>
+        <span class="cart__discounts__amount money">{{ cart.items_subtotal_price | money }}</span>
+      </h4>
+      {%- for discount in cart.cart_level_discount_applications -%}
+        <h4 class="info__subtotal--discounts">
+          <span class="cart__discounts__title">{{ discount.title }}:</span>
+          <span class="cart__discounts__amount money">-{{ discount.total_allocated_amount | money }}</span>
+        </h4>
+      {%- endfor -%}
+    {%- endif -%}
+    <h3 class="info__subtotal bm-span-left-right">
+      <span>{{ 'cart.general.subtotal' | t }}:</span>
+      <span class="cart__subtotal" data-cart-total-price>{{ cart.total_price | money }}</span>
+    </h3>
+
+    <div class="proceed">
+      <input class="btn large-btn" type="submit" id="Checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
+    </div>
+    
+  </div>
+</form>

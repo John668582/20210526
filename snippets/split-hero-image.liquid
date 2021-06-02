@@ -1,0 +1,29 @@
+<!-- /snippets/split-hero-image.liquid -->
+{% comment %}
+  The background image of a split hero section
+
+  Accepts:
+  img_object {object} - The Image we will use
+
+  Usage:
+  {% render 'split-hero-image', image: section.settings.image %}
+{% endcomment %}
+
+<div class="split-hero__box">
+  {%- unless image == blank -%}
+    <div class="split-hero__image lazyload fade-in"
+      data-bgset="{% render 'bgset', image: image %}"
+      data-sizes="auto"
+      data-parent-fit="cover">
+    </div>
+    <noscript>
+      <div class="split-hero__image"
+        style="background-image:url('{{ image | img_url: '2048x' }}');">
+      </div>
+    </noscript>
+  {%- else -%}
+    <div class="split-hero__image split-hero__image--onboarding">
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endunless -%}
+</div>

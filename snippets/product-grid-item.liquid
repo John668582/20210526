@@ -1,0 +1,145 @@
+{% comment %}
+    Renders list of products in grid layout
+
+    Accepts:
+    - product: {Object} product (required)
+    - grid_strings: {String} contains a string of grid classes
+    - last_element: {Boolean} True when custom image is taking up the first slot for the collection
+                              and the loop is on the last element for the page.
+
+    Usage:
+    {% render 'product-grid-item', product: product, grid_strings: grid_strings %}
+{% endcomment %}
+
+{%- unless grid_strings -%}
+  {% assign grid_strings = "one-whole" %}
+{%- endunless -%}
+
+{%- assign double_img = false -%}
+{%- if product.media[1].preview_image and settings.image_hover_enable -%}
+  {%- assign double_img = true -%}
+{%- endif -%}
+{%- assign current_variant = product.first_available_variant -%}
+
+<div class="product-item {{ grid_strings }}" data-product-grid-item>
+<!--           <button type="button" class="virtooal-tryon-btn virtooal-tryon-btn-catalog-page-mobile" data-virtooal_id="{{product.selected_or_first_available_variant.id}}">Try On</button> -->
+  
+  
+  <a id="product-{{ product.variants.first.id }}" class="product-link" href="{{ product.url }}" aria-label='{{ product.title }}'>
+
+    {% capture over_image_content %}
+      {% if product.compare_at_price > product.price and settings.sale_tags_enable %}
+        <span class="sale-box">{{ 'products.product.on_sale' | t }}</span>
+      {% endif %}
+      {% if settings.quickview_enable %}
+        <div class="slideup">
+          {%- assign uniqueID = section.id -%}
+          {%- if template.name == 'list-collections' -%}
+            {%- assign uniqueID = collection.id -%}
+          {%- endif -%}
+          <!--<span data-trigger-quickview="{{product.handle}}" class="caps">{{ 'products.general.quick_view' | t }}</span>-->
+          <button type="button" class="virtooal-tryon-btn virtooal-tryon-btn-collection-page virtooal-tryon-btn-slideup" data-virtooal_id="{{product.selected_or_first_available_variant.id}}">Try On</button>
+        </div>
+
+      {% endif %}
+    {% endcapture %}
+
+    <div class="product-item__image {% if double_img %} double__image{% endif %}">
+      <div class="product-item__bg lazyload"
+        data-aos="img-in"
+        data-aos-anchor=".product-grid"
+        data-aos-delay="{{ animation_delay | times: 150 }}"
+        data-aos-duration="{{ animation_delay | times: 100 | plus: 800 }}"
+        data-aos-easing="ease-out-quart"
+        data-bgset="{% render 'bgset', image: product.featured_media.preview_image %}"></div>
+        {% if double_img %}
+          <div class="product-item__bg__under lazyload" data-bgset="{% render 'bgset', image: product.media[1].preview_image %}"></div>
+        {% endif %}
+      {{ over_image_content }}
+     
+    </div>
+
+    <noscript>
+      <div class="product-item__image no-js-image" style="background-image:url('{{ img_src | img_url: '540x' }}'); background-size: contain; background-position: center center; background-repeat: no-repeat;">
+        {{ over_image_content }}
+      </div>
+    </noscript>
+    <div class="product-information"
+      data-aos="fade-up"
+      data-aos-anchor=".product-grid"
+      data-aos-delay="{{ animation_delay | times: 100 }}"
+      data-aos-duration="{{ animation_delay | times: 100 | plus: 100 }}">
+            
+
+      {%- if showReviews -%}
+      {%- if settings.enable_yotpo and settings.yotpo_ID != '' -%}
+          <div class="yotpo bottomLine" data-product-id="{{ product.id }}"></div>
+        {%- else -%}
+          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+      
+        {%- endif -%}
+      {%- endif -%}
+      <!--
+      <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+      -->
+     
+      <p class="product__grid__title">{{ product.title }}</p>
+            <span class="price{% if product.compare_at_price > product.price %} sale{% endif %}">
+        {% if product.available %}
+          {% if product.compare_at_price > product.price %}
+            <span class="old-price">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+          {% if product.price_varies %}
+            <small>{{ 'products.general.from' | t }}</small> {{ product.price_min | money }}
+          {% else %}
+            {{ product.price_min | money }}
+          {% endif %}
+        {% else %}
+          <span class="sold-out">{{ 'products.product.sold_out' | t }}</span>
+        {% endif %}
+      </span>
+      {% if current_variant.unit_price %}
+        {% capture unit_price_separator %}
+          <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+        {% endcapture %}
+        {% capture unit_price_base_unit %}
+          {% if current_variant.unit_price_measurement.reference_value != 1 %}
+            {{ current_variant.unit_price_measurement.reference_value }}
+          {% endif %}
+          {{ current_variant.unit_price_measurement.reference_unit }}
+        {% endcapture %}
+        <br>
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
+          <span class="unit small">{{ current_variant.unit_price | money }}{{ unit_price_separator }}{{ unit_price_base_unit }}</span>
+      {% endif %}
+    </div>
+    <div class="virtooal-tryon-btn-collection-corner-wrapper">
+        <button type="button" class="virtooal-tryon-btn virtooal-tryon-btn-collection-page virtooal-tryon-btn-corner" data-virtooal_id="{{product.selected_or_first_available_variant.id}}">Try On</button>
+      </div>
+  </a>
+
+
+  {% if settings.quickview_enable %}
+    <div class="modal__overlay modal__overlay--quickview" data-quickview-modal>
+      <section class="modal__outer">
+        <div class="modal__wrapper">
+          <div class="modal--quickview">
+            <div class="modal__inner__wrapper"
+                 data-quickview-content
+                 data-product-handle="{{ product.handle }}"
+                 data-enable-history-state="false"
+                 data-sticky-enabled="false"
+                 data-tall-layout="false"
+                 data-reviews="false"
+                 data-video-looping="{{ settings.enable_video_looping }}">
+              <div class="loader loader--quickview">
+                <div class="loader-indeterminate"></div>
+              </div>
+            </div>
+            <a href="#" class="close">{% render 'icon-close-thin' %}</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  {% endif %}
+</div>

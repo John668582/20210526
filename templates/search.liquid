@@ -1,0 +1,145 @@
+<!-- /sections/collections.liquid -->
+
+{%- assign showQuickView = settings.quickview_enable -%}
+{%- assign showReviews = true -%}
+{%- assign showSort = true -%}
+{%- assign enableSwatches = settings.color_swatches -%}
+{%- assign product_per_row = 4 -%}
+{%- assign pagination_count = product_per_row | times: 2 -%}
+{%- case product_per_row -%}
+	{%- when 2 -%}
+		{%- assign grid_width_large = 'large-up--one-half' -%}
+		{%- assign grid_width_medium = 'medium--one-half' -%}
+		{%- assign grid_width_small = 'small--one-half' -%}
+	{%- when 3 -%}
+		{%- assign grid_width_large = 'large-up--one-third' -%}
+		{%- assign grid_width_medium = 'medium--one-third' -%}
+		{%- assign grid_width_small = 'small--one-whole' -%}
+	{%- when 4 -%}
+		{%- assign grid_width_large = 'large-up--one-quarter' -%}
+		{%- assign grid_width_medium = 'medium--one-half' -%}
+		{%- assign grid_width_small = 'small--one-half' -%}
+	{%- when 5 -%}
+		{%- assign grid_width_large = 'large-up--one-fifth' -%}
+		{%- assign grid_width_medium = 'medium--one-third' -%}
+		{%- assign grid_width_small = 'small--one-half' -%}
+	{%- else -%}
+		{%- assign grid_width_large = 'large-up--one-sixth' -%}
+		{%- assign grid_width_medium = 'medium--one-third' -%}
+		{%- assign grid_width_small = 'small--one-half' -%}
+{%- endcase -%}
+
+
+<section class="collection collection-search page search-page"
+	data-section-id="collection"
+	data-section-type="collection"
+	data-section-type="collection-grid"
+	data-section-type="collection-hero"
+	data-reviews="{{ showReviews }}"
+	data-swatches="{{ enableSwatches }}"
+	data-sort="{{ showSort }}">
+
+	<h2 class="theme">{{ 'general.search.title' | t }}</h2>
+	<div class="search-outer">
+		<form action="{{ routes.search_url }}" class="search-form">
+			<input type="hidden" name="type" value="product"/>
+			<input type="text" name="q" class="search-box" placeholder="{{ 'general.search.title' | t }}" value="{{ search.terms }}"/>
+			<button type="submit" class="search-submit">{{ 'general.search.submit' | t }}</button>
+		</form>
+	</div>
+	
+	<div class="boost-pfs-search-result-toolbar">
+		<div class="boost-pfs-search-result-item">
+			<ul class="boost-pfs-search-result-panel-controls">
+				<li>{% include 'boost-pfs-filter-skeleton', width: 2 %}</li>
+				<li>{% include 'boost-pfs-filter-skeleton', width: 2 %}</li>
+				<li>{% include 'boost-pfs-filter-skeleton', width: 1 %}</li>
+			</ul>
+		</div>
+		<div class="boost-pfs-search-result-item">
+			<span class="boost-pfs-search-total-result">
+				{% include 'boost-pfs-filter-skeleton', width: 2 %}
+			</span>
+		</div>
+	</div>
+
+	<nav class="collection__nav collection__nav--sort boost-pfs-search-panel-product-show">
+		<div class="bc-filter-tree-h-wrapper">
+			<div class="boost-pfs-filter-tree boost-pfs-filter-tree-h" data-is-desktop ></div>
+		</div>
+		{%- if showSort -%}
+			<div class="collection__sorting boost-pfs-filter-top-sorting"></div>
+		{%- endif -%}  
+	</nav>
+
+
+	<div class="bc-page-width boost-pfs-search-panel-product-show">
+		<div class="boost-pfs-filter-tree boost-pfs-filter-tree-mobile-button"></div>
+		<div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
+		<div class="product-grid boost-pfs-filter-products">
+			{% comment %} Fix Shopify search term report {% endcomment %}
+			{% paginate search.results by 2 %}
+			{% if search.performed %}
+				{% for item in search.results %}
+					<div class="grid__item" style="display: none !important"></div>
+				 {% endfor %}
+				{% endif %}
+			{% endpaginate %}
+		</div>
+	</div> 
+</section>
+
+<div class="boost-pfs-filter-load-more"></div>
+<div class="boost-pfs-filter-bottom-pagination"></div>
+
+<div class="boost-pfs-search-result-wrap boost-hidden">
+	<div class="boost-pfs-search-result-collections">
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 4 %}</a></div>
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 3 %}</a></div>
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 4 %}</a></div>
+	</div>
+	<div class="boost-pfs-search-result-collection-pagination">{% include 'boost-pfs-filter-skeleton', width: 4 %}</div>
+</div>
+<div class="boost-pfs-search-result-wrap boost-hidden">
+	<div class="boost-pfs-search-result-pages">
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 4 %}</a></div>
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 3 %}</a></div>
+		<div class="boost-pfs-search-result-list-item"><a href="#">{% include 'boost-pfs-filter-skeleton', width: 4 %}</a></div>
+	</div>
+	<div class="boost-pfs-search-result-page-pagination">{% include 'boost-pfs-filter-skeleton', width: 4 %}</div>
+</div>
+
+<script>
+	// Declare boostPFSThemeConfig variable
+	var boostPFSThemeConfig = {
+		label: {
+			sorting: {% assign temp = 'collections.sorting.title' | t  %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Sorting" {% endunless %},
+			sorting_best_selling: {% assign temp = 'collections.sorting.best_selling' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Best Selling" {% endunless %},
+			sorting_featured: {% assign temp = 'collections.sorting.featured' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Featured" {% endunless %},
+			sorting_title_ascending: {% assign temp = 'collections.sorting.az' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Alphabetically, A-Z" {% endunless %},
+			sorting_title_descending: {% assign temp = 'collections.sorting.za' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Alphabetically, Z-A" {% endunless %},
+			sorting_price_ascending: {% assign temp = 'collections.sorting.price_ascending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Lowest Price" {% endunless %},
+			sorting_price_descending: {% assign temp = 'collections.sorting.price_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Highest Price" {% endunless %},
+			sorting_date_ascending: {% assign temp = 'collections.sorting.date_ascending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Date, Old to New" {% endunless %},
+			sorting_date_descending: {% assign temp = 'collections.sorting.date_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Date, New to Old" {% endunless %},
+			sorting_sale_descending: {% assign temp = 'collections.sorting.sale_descending' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "% Off" {% endunless %},
+			sorting_relevance: {% assign temp = 'collections.sorting.relevance' | t %} {% unless temp contains 'translation missing'  %} "{{ temp }}" {% else %} "Relevance" {% endunless %},
+			
+			sale: {{ 'products.product.on_sale' | t | json }},
+			sold_out: {{ 'products.product.sold_out' | t | json }},
+			from: {{ 'products.general.from' | t | json }},
+			quick_view: {{ 'products.general.quick_view' | t | json }},
+		},
+		custom: {
+			products_per_page: {% if pagination_count %} {{ pagination_count | json }} {% else %} 24 {% endif %},
+			products_per_row: {% if product_per_row %} {{ product_per_row | json }} {% else %} 4 {% endif %},
+			quickview_enable: {% if settings.quickview_enable != nil %} {{ settings.quickview_enable | json }} {% else %} true {% endif %},
+			enable_reviews: {% if section.settings.enable_reviews %} {{ section.settings.enable_reviews | json }} {% else %} false {% endif %},
+			enable_yotpo: {% if settings.enable_yotpo %} {{ settings.enable_yotpo | json }} {% else %} false {% endif %},
+			yotpo_ID: {% if settings.yotpo_ID %} {{ settings.yotpo_ID | json }} {% else %} "" {% endif %},
+			image_hover_enable: {{ settings.image_hover_enable | json }},
+			grid_int: {{ section.settings.grid | json }},
+			endless_scroll: {% if settings.endless_scroll %}{{ settings.endless_scroll | json }} {% else %} false {% endif %},
+		}
+	};
+</script>

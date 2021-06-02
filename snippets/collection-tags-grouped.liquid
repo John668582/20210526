@@ -1,0 +1,57 @@
+<!-- /snippets/collection-tags-grouped.liquid -->
+
+{% comment %}
+    Renders a list of grouped tags from a collection
+
+    Accepts:
+    - collection: {Object} currenct collection
+
+    Usage:
+    {%- render 'collection-tags-grouped' collection: collection -%}
+{% endcomment %}
+
+{% assign all_groups = '' %}
+{% for tag in collection.all_tags %}
+  {% if tag contains '_' %}
+    {% assign firstChar = tag | slice: 0 %}
+    {%- unless firstChar == '_' -%}
+      {% capture all_groups %}{% unless all_groups == blank  %}{{ all_groups }}|{% endunless %}{{ tag | split: '_' | first }}{% endcapture %}
+      {%- assign tags_underscore = true -%}
+    {%- endunless -%}
+  {% endif %}
+{% endfor %}
+
+{% assign group_array = all_groups | split: '|' | uniq %}
+
+{%- if tags_underscore -%}
+  <div class="collection__sidebar">
+    {%- for group_object in group_array -%}
+      <div class="collection__sidebar__group">
+        <p class="collection__sidebar__heading">{{ group_object | replace: "-", " " }}</p>
+        <ul class="collection-nav collection-nav--grouped">
+          {%- for tag in collection.all_tags -%}
+            {% assign firstChar = tag | slice: 0 %}
+            {%- unless firstChar == '_' -%}
+              {%- assign group = tag | split: '_' | first -%}
+              {%- if group != tag and group_object == group -%}
+                {%- if current_tags contains tag -%}
+                  <li class="sidebar__item sidebar__item--active link--remove">
+                    {{ tag | remove_first: group_object | remove_first: '_' | replace: "-", " " | link_to_remove_tag: tag }}
+                  </li>
+                {%- elsif collection.tags contains tag -%}
+                  <li class="sidebar__item link--add">
+                    {{ tag | remove_first: group_object | remove_first: '_' | replace: "-", " " | link_to_add_tag: tag }}
+                  </li>
+                {%- else -%}
+                  <li class="sidebar__item link--disable">
+                    {{ tag | remove_first: group_object | remove_first: '_' | replace: "-", " " }}
+                  </li>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

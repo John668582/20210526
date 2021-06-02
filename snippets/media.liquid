@@ -1,0 +1,100 @@
+<!-- /snippets/media.liquid -->
+
+{% comment %}
+    Returns a media object for a product slideshow
+
+    Accepts:
+    -  media: {Object} - The media object we will use (required)
+    -  product: {Object} - The current product (required)
+    -  sectionkey: {String} - A section key for use in the media object js
+
+    Usage:
+    {% render 'media', media: media, featured_media: featured_media, sectionkey: section.id  %}
+{% endcomment %}
+
+{%- assign image_size = '1024x1024' -%}
+{% case media.media_type %}
+  {% when 'image' %}
+    {%- assign img_api = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    <div class="product__photo{% unless featured_media == media %} media--hidden{% endunless %}"
+      data-product-single-media-wrapper
+      data-media-id="{{ sectionKey }}-{{ media.id }}"
+      data-type="image"
+      data-thumb="{{ media | img_url: '200x200', crop: 'center' }}"
+      tabindex="0">
+      <div {% if media.aspect_ratio < 1 %}style="width:{{ media.aspect_ratio | times: 100 }}%; margin: 0 auto;"{% endif %}>
+        <div  data-zoom-wrapper class="lazy-image" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%; background-image:  url('{{ media | img_url: '1x1' }}');">
+          <img data-zoom data-src="{{  media | img_url: '3000x' }}" style="display: none;" alt="{{ 'products.product.zoom' | t }}">
+          <img data-product-image class="fade-in lazyload lazypreload"
+            data-image-id="{{ media.id }}"
+            alt="{{ media.alt | escape }}"
+            aria-label="{{ media.alt | escape }}"
+            data-src="{{ img_api }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048, 2450, 2700, 3000, 3350, 3750, 4100]"
+            data-sizes="auto"
+            {% if media.alt contains 'variant--' %}
+              data-variant="media.alt"
+            {% endif %}/>
+        </div>
+      </div>
+    </div>
+  {% when 'model' %}
+    <div class="product__media{% unless featured_media == media %} media--hidden{% endunless %}"
+      data-product-single-media-wrapper
+      data-media-id="{{ sectionKey }}-{{ media.id }}"
+      data-model
+      data-model-id="{{ media.id }}"
+      data-type="model"
+      data-thumb="{{ media.preview_image.src | img_url: '200x200', crop: 'center' }}"
+      aria-label="{{ media.alt | escape }}"
+      tabindex="-1">
+      <div class="model__contain" style="padding-top:100%;">
+        {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true, data-model-id: media.id, interaction-prompt-threshold: 500, image_size: image_size }}
+      </div>
+    </div>
+  {% when 'video' %}
+    <div class="product__media{% unless featured_media == media %} media--hidden{% endunless %}"
+      data-product-single-media-wrapper
+      data-media-id="{{ sectionKey }}-{{ media.id }}"
+      data-video
+      data-type="video"
+      data-thumb="{{ media.preview_image.src | img_url: '200x200', crop: 'center' }}"
+      data-player-id="{{ media.id }}"
+      data-media-key="{{ sectionkey }}"
+      id="{{ media.id }}"
+      aria-label="{{ media.alt | escape }}"
+      tabindex="-1">
+      <div class="video__contain" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;">
+        {{ media | video_tag: class: 'media-video', image_size: image_size }}
+      </div>
+    </div>
+  {% when 'external_video' %}
+    <div class="product__media{% unless featured_media == media %} media--hidden{% endunless %}"
+      data-product-single-media-wrapper
+      data-media-id="{{ sectionKey }}-{{ media.id }}"
+      data-video
+      data-thumb="{{ media.preview_image.src | img_url: '200x200', crop: 'center' }}"
+      data-type="external_video"
+      data-youtube-id="{{ media.external_id }}"
+      data-player-id="{{ media.id }}"
+      data-media-key="{{ sectionkey }}"
+      id="{{ media.id }}"
+      aria-label="{{ media.alt | escape }}"
+      tabindex="-1">
+      <div class="video__contain" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;">
+        {{ media | external_video_tag }}
+      </div>
+    </div>
+  {% else %}
+    <div class="product__media{% unless featured_media == media %} media--hidden{% endunless %}"
+      data-product-single-media-wrapper
+      data-media-id="{{ sectionKey }}-{{ media.id }}"
+      data-type="media-other"
+      data-thumb="{{ media.preview_image.src | img_url: '200x200', crop: 'center' }}"
+      aria-label="{{ media.alt | escape }}"
+      tabindex="0">
+      <div style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;">
+        {{ media | media_tag: class: "media__other" }}
+      </div>
+    </div>
+{% endcase %}

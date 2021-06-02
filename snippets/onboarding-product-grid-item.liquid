@@ -1,0 +1,36 @@
+{% comment %}
+    Renders an empty product grid item
+
+    Accepts:
+    - last_element (optional)
+    - grid_strings: {String} contains a string of grid classes (optional)
+
+    Usage:
+    {% render 'onboarding-product-grid-item', last_element: lastElement, grid_strings: grid_strings %}
+{% endcomment %}
+
+{%- unless grid_strings -%}
+  {% assign grid_strings = "one-whole" %}
+{%- endunless -%}
+
+<div class="product-item {{ grid_strings }} {{ lastElementClass }}">
+  <div class="product-item__image svg-placeholder">
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {{ 'collection-' | append: current | placeholder_svg_tag }}
+  </div>
+  <div class="product-information">
+    {% if showReviews %}
+      <span class="spr-badge" data-rating="0.0">
+        <span class="spr-starrating spr-badge-starrating">
+          <i class="spr-icon spr-icon-star-empty"></i>
+          <i class="spr-icon spr-icon-star-empty"></i>
+          <i class="spr-icon spr-icon-star-empty"></i>
+          <i class="spr-icon spr-icon-star-empty"></i>
+          <i class="spr-icon spr-icon-star-empty"></i>
+        </span>
+      </span>
+    {% endif %}
+    <p class="product__grid__title">{{ 'home_page.onboarding.product_title' | t }}</p>
+    <span class="price">{{ 9900 | money }}</span>
+  </div>
+</div>

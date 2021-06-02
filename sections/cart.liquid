@@ -1,0 +1,173 @@
+<!-- /sections/cart.liquid -->
+
+<div class="cart"  data-section-id="{{ section.id }}" data-section-type="cart">
+	{% if cart.item_count == 0 %}
+	  {% include 'cart-empty' %}
+	{% else %}
+	  <h2 class="theme">{{ 'cart.general.title' | t }} (<span data-cart-count></span>)</h2>
+	  <div class="cart-form-errors" data-form-errors style="display: none;"></div>
+
+		{% comment %}
+		  The following snippet is refreshed via ajax with
+			cart.ajax.liquid when the quantity is adjusted.
+		{% endcomment %}
+		<div data-cart-form-wrapper>
+      {%- comment -%}{%- render 'cart-form' -%}{%- endcomment -%}
+      
+      {% include 'zq-cart-items' %}
+      
+		</div>
+
+		<div data-cart-holder style="display:none"></div>
+		<div class="cart-section-options" data-cart-additional style="display:none">
+			{%- if section.settings.allow_tax_text -%}
+		      {%- if section.settings.custom_tax_text == '' -%}
+		        <p class="info__tax"><small>{{ 'cart.general.subtotal_note' | t }}</small></p>
+		      {%- else -%}
+		        <p class="info__tax"><small>{{ section.settings.custom_tax_text }}</small></p>
+		      {%- endif -%}
+		    {%- endif -%}
+
+			{%- if additional_checkout_buttons and section.settings.cart_show_additional_buttons -%}
+				<div class="additional-checkout-buttons">
+					<small class="additional-checkout">&mdash; {{ 'cart.general.or' | t }} &mdash;</small>
+					{{ content_for_additional_checkout_buttons }}
+				</div>
+			{%- endif -%}
+
+			<div class="cart-extra" data-section-type="cart-template">
+				{%- if section.settings.allow_note -%}
+					<p><small><a class="show-note" href="javascript:void(0)">{{ 'cart.general.customer_note' | t }}</a></small></p>
+					<div class="note" id="NoteForSeller">
+						<textarea id="note" name="note" aria-label="{{ 'cart.general.customer_note' | t }}">{{ cart.note }}</textarea>
+					</div>
+				{%- endif -%}
+
+				{%- if section.settings.shipping_calculator -%}
+					<p><small><a class="show-calculator" href="javascript:void(0)">{{ 'cart.shipping_calculator.estimate_shipping' | t }}</a></small></p>
+					<div id="ShippingCalculator">
+						{%- assign default_country = section.settings.shipping_calculator_default_country -%}
+						<!-- /partials/cart-shipping-calculator.liquid -->
+<div id="shipping-calculator">
+  <div>
+    <p>
+      <label for="address_country">{{ 'customer.addresses.country' | t }}</label>
+      <select id="address_country" name="address[country]" data-default="{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address.country }}{% elsif default_country != '' %}{{ default_country }}{% endif %}">{{ country_option_tags }}</select>
+    </p>
+    <p id="address_province_container" style="display:none;">
+      <label for="address_province" id="address_province_label">{{ 'customer.addresses.province' | t }}</label>
+      <select id="address_province" class="address_form" name="address[province]" data-default="{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}{{ customer.default_address.province }}{% endif %}"></select>
+    </p>
+  </div>
+
+  <p>
+    <label for="address_zip">{{ 'customer.addresses.zip' | t }}</label>
+    <input type="text" id="address_zip" name="address[zip]"{% if shop.customer_accounts_enabled and customer %} value="{{ customer.default_address.zip }}"{% endif %} />
+  </p>
+  <input type="button" class="get-rates btn" value="{{ 'cart.shipping_calculator.calculate_shipping' | t }}" />
+
+  <div id="wrapper-response"></div>
+
+</div>
+
+<script id="shipping-calculator-response-template" type="text/x-jquery-tmpl">
+  {% raw %}
+    <p id="shipping-rates-feedback" class="{{if success}}success{{else}}error{{/if}}">
+    {{if success}}
+      {{if rates.length < 1}}
+      	{% endraw %}{{ 'cart.shipping_calculator.no_shipping_available' | t }}{% raw %}
+      {{/if}}
+    {{else}}
+      ${errorFeedback}
+    {{/if}}
+    </p>
+    <ul id="shipping-rates">
+      {{each( index, rate ) rates}}
+      <li>${rate.name}: {{html Shopify.Cart.ShippingCalculator.formatRate(rate.price)}}</li>
+      {{/each}}
+    </ul>
+  {% endraw %}
+</script>
+
+<script>
+  theme.strings = {
+      shippingCalcSubmitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+      shippingCalcSubmitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }},
+      {% if customer %}shippingCalcCustomerIsLoggedIn: true,{% endif %}
+      shippingCalcMoneyFormat: {{ shop.money_with_currency_format | json }}
+  }
+</script>
+
+					</div>
+				{%- endif -%}
+			</div>
+		</div>
+
+	  <div class="cart__foot">
+	    <a class="text-link" href="{{ routes.root_url }}">{{ 'cart.general.continue_shopping' | t }}</a>
+	  </div>
+	{% endif %}
+</div>
+
+<script type="application/html" id="cart-empty-html">
+  {% include 'cart-empty' %}
+</script>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "zq_cart_info_textarea",
+      "label": "结账按钮上方文本",
+      "default": "<p><span style='margin-right:15px'>✔️</span>Includes frame case and lens cloth</p><p><span style='margin-right:15px'>✔️</span>Free standard shipping and free returns</p><p><span style='margin-right:15px'>✔️</span>15% off for purchasing multiple pairs of prescription eyewear</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_note",
+      "label": "Enable order notes",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_tax_text",
+      "label": "Enable tax & shipping text",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_tax_text",
+      "label": "Custom tax text"
+    },
+    {
+      "type": "header",
+      "content": "Shipping rates calculator"
+    },
+    {
+      "type": "checkbox",
+      "id": "shipping_calculator",
+      "label": "Show shipping rates calculator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_calculator_default_country",
+      "label": "Shipping rates calculator default country",
+      "default": "United States",
+      "info": "If the customer is logged in, their shipping address country will replace the default."
+    },
+		{
+			"type": "header",
+			"content": "Additional checkout buttons"
+		},
+		{
+			"type": "checkbox",
+			"id": "cart_show_additional_buttons",
+			"label": "Show additional checkout options on cart",
+			"info": "Move buttons for Apple Pay, Amazon Pay and PayPal express from the first step of the checkout to the cart.",
+			"default": true
+		}
+  ]
+}
+{% endschema %}

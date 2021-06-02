@@ -1,0 +1,35 @@
+c<!-- /snippets/products-recommendation.liquid -->
+{%- if recommendations.performed -%}
+  {%- if recommendations.products_count > 0 -%}
+    {%- if has_related_products and has_recently_products != true -%}
+      <h3 class="recent__title theme">
+        {{- section.settings.product_recommendations_heading -}}
+      </h3>
+    {%- endif -%}
+
+    <div class="product-grid">
+      {%- case recommendations.products_count -%}
+        {%- when 1 -%}
+          {%- assign grid_strings = 'large-up--one-third large-up--push-one-third medium--one-third push--medium--one-third small--one-whole' -%}
+        {%- when 2 -%}
+          {%- assign grid_strings = 'large-up--one-half medium--one-half small--one-half' -%}
+        {%- when 3 -%}
+          {%- assign grid_strings = 'large-up--one-third medium--one-third small--one-third' -%}
+        {%- when 4 -%}
+          {%- assign grid_strings = 'large-up--one-quarter medium--one-half small--one-half' -%}
+        {%- when 5 -%}
+          {%- assign grid_strings = 'large-up--one-fifth medium--one-third small--one-half' -%}
+        {%- when 6 -%}
+          {%- assign grid_strings = 'large-up--one-sixth medium--one-third small--one-half' -%}
+        {%- else -%}
+          {%- assign grid_strings = 'large-up--one-quarter medium--one-third small--one-half' -%}
+      {%- endcase -%}
+
+      {%- for product in recommendations.products -%}
+        {% render 'product-grid-item', product: product, grid_strings: grid_strings %}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+{%- else -%}
+  <div class="related__placeholder"></div>
+{%- endif -%}
